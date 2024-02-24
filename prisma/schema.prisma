@@ -1,0 +1,267 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+enum USER_ROLE {
+  SUPER
+  ADMIN
+  SELLER
+  USER
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  password      String
+  emailVerified DateTime?
+  image         String?
+  role          USER_ROLE @default(USER)
+  extra         Json? //fullName , province, city, address , postCode, 
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  accounts      Account[]
+  sessions      Session[]
+  products      Product[]
+  comments      Comment[]
+  tickets       Ticket[]
+  carts         Cart[]
+  invoices      Invoice[]
+  payments      Payment[]
+}
+
+enum BANNER_POSITION {
+  SLIDER
+  TOP_RIGHT
+  TOP_LEFT
+  BOTTOM_RIGHT
+  BOTTOM_LEFT
+}
+
+model Banner {
+  id        String            @id @default(cuid())
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+  title     String
+  link      String
+  image     String
+  status    ACTIVATION_STATUS @default(PENDING)
+  position  BANNER_POSITION   @default(SLIDER)
+}
+
+model Category {
+  id            String        @id @default(cuid())
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  name          String
+  image         String?
+  isMain        Boolean?      @default(false)
+  subCategories SubCategory[]
+}
+
+model SubCategory {
+  id         String    @id @default(cuid())
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  name       String
+  image      String?
+  isMain     Boolean?  @default(false)
+  categoryId String
+  category   Category  @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  products   Product[]
+}
+
+enum ACTIVATION_STATUS {
+  PENDING
+  REJECTED
+  ACCEPTED
+  SUSPENDED
+}
+
+model Product {
+  id            String            @id @default(cuid())
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+  name          String
+  description   String?
+  status        ACTIVATION_STATUS @default(PENDING)
+  features      Json?
+  isMain        Boolean?          @default(false)
+  isActive      Boolean?          @default(false)
+  images        String[]
+  tags          String?
+  subCategoryId String
+  subCategory   SubCategory       @relation(fields: [subCategoryId], references: [id])
+  userId        String
+  user          User              @relation(fields: [userId], references: [id])
+  stocks        Stock[]
+  comments      Comment[]
+  carts         Cart[]
+  invoiceItems  InvoiceItem[]
+}
+
+enum CURRENCY_TYPE {
+  IRR
+  TRY
+  USD
+  EUR
+}
+
+model Stock {
+  id        String        @id @default(cuid())
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  price     Decimal       @db.Money
+  inStock   Int           @default(0) @db.SmallInt
+  discount  Int           @default(0) @db.SmallInt
+  currency  CURRENCY_TYPE @default(IRR)
+  productId String
+  product   Product       @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Comment {
+  id        String            @id @default(cuid())
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+  name      String
+  email     String?
+  message   String
+  status    ACTIVATION_STATUS @default(PENDING)
+  stars     Int?              @db.SmallInt
+  userId    String
+  user      User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product           @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Ticket {
+  id          String            @id @default(cuid())
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+  name        String
+  email       String
+  subject     String
+  message     String
+  phoneNumber String?
+  status      ACTIVATION_STATUS @default(PENDING)
+  userId      String?
+  user        User?             @relation(fields: [userId], references: [id])
+}
+
+model Cart {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  qty       Int      @db.SmallInt
+  price     Decimal  @db.Money
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+enum PAY_STATUS {
+  PAIED
+  NOT_PAIED
+}
+
+enum INVOICE_STATUS {
+  PENDING
+  PROGRESSING
+  DELIVERED
+  LOST
+  DONE
+}
+
+model Invoice {
+  id          String         @id @default(cuid())
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  deliveredAt DateTime?
+  status      INVOICE_STATUS @default(PENDING)
+  payStatus   PAY_STATUS     @default(NOT_PAIED)
+  paiedAt     DateTime?
+  totalAmount Decimal        @db.Money
+  userId      String
+  user        User           @relation(fields: [userId], references: [id])
+  items       InvoiceItem[]
+  payments    Payment[]
+}
+
+model InvoiceItem {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  amount    Decimal  @db.Money
+  qty       Int      @default(1) @db.SmallInt
+  invoiceId String
+  invoice   Invoice  @relation(fields: [invoiceId], references: [id])
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Payment {
+  id        String     @id @default(cuid())
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  payStatus PAY_STATUS @default(NOT_PAIED)
+  amount    Decimal    @db.Money
+  authority String
+  extra     Json?
+  invoiceId String
+  invoice   Invoice    @relation(fields: [invoiceId], references: [id])
+  userId    String
+  user      User       @relation(fields: [userId], references: [id])
+}
+
+// Schema::create('wishlist', function (Blueprint $table) {
+//             $table->unsignedBigInteger('product_id');
+//             $table->unsignedBigInteger('user_id');
+//             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+//             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+//         });

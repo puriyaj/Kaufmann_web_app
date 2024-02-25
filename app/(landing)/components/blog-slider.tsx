@@ -8,7 +8,7 @@ export const BlogSlider = () => {
         <div className="entery rt">
           <h2 className="asli rt rt-align rt-23">
             <a href="#" className="rt-555">
-              آخرین های <span className="rt-400">وبلاگ</span> فروشگاه
+                <span className="rt-400">Last Blogs</span> 
             </a>
           </h2>
           <div className="slider-4 rt rt-relative owl-carousel">

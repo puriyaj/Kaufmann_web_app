@@ -21,21 +21,21 @@ export const ProductCard: React.FC<{ product: ProductWithCategoryAndStock }> = (
           <>
             <del className="rt rt-12 rt-999">
               <bdi>
-                {Number(stock?.price ?? 0).toLocaleString()} <span>تومان</span>
+                {Number(stock?.price ?? 0).toLocaleString()} <span>Euro</span>
               </bdi>
             </del>
             <span className="darsad rt-medium rt-12 rt-5px rt-fff right">{stock?.discount ?? 0}%</span>
 
             <ins className="right rt-14 rt-5px rt-555 rt-medium">
               <bdi className="rt-medium">
-                {Number(Number(stock?.price ?? 0) - Number(stock?.price ?? 0) * (Number(stock?.discount ?? 0) / 100)).toLocaleString()} <span className="rt-medium">تومان</span>
+                {Number(Number(stock?.price ?? 0) - Number(stock?.price ?? 0) * (Number(stock?.discount ?? 0) / 100)).toLocaleString()} <span className="rt-medium">Euro</span>
               </bdi>
             </ins>
           </>
         ) : (
           <ins className="right rt-14 rt-5px rt-555 rt-medium">
             <bdi className="rt-medium">
-              {Number(stock?.price ?? 0).toLocaleString()} <span className="rt-medium">تومان</span>
+              {Number(stock?.price ?? 0).toLocaleString()} <span className="rt-medium">Euro</span>
             </bdi>
           </ins>
         )}

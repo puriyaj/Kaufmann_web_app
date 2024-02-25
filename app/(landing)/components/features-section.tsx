@@ -1,56 +1,56 @@
 import React from 'react';
-
+import Image from 'next/image';
 export const FeaturesSection = () => {
   return (
     <section className="feature mostbehide rt">
       <div className="main">
         <div className="item right rt-bg">
           <div className="icon rt-50px rt-center">
-            <img src="/image/icon-1.png" />
+            <Image width={40} height={40} alt='logo' src="/image/icon-1.png" />
           </div>
           <div className="inside left">
-            <h6 className="rt rt-400 rt-555 rt-15">ارسال رایگان</h6>
-            <p className="rt rt-13 rt-300 rt-777">برای تمامی سفارشات</p>
+            <h6 className="rt rt-400 rt-555 rt-15"> Free shiping</h6>
+            <p className="rt rt-13 rt-300 rt-777">for all Products </p>
           </div>
         </div>
 
         <div className="item right rt-bg">
           <div className="icon rt-50px rt-center">
-            <img src="/image/icon-2.png" />
+            <Image width={40} height={40} alt='logo' src="/image/icon-2.png" />
           </div>
           <div className="inside left">
-            <h6 className="rt rt-400 rt-555 rt-15">بازگشت پول</h6>
-            <p className="rt rt-13 rt-300 rt-777">در صورت عدم رضایت</p>
+            <h6 className="rt rt-400 rt-555 rt-15"> Cash Back</h6>
+            <p className="rt rt-13 rt-300 rt-777">In 14 Days </p>
           </div>
         </div>
 
         <div className="item right rt-bg">
           <div className="icon rt-50px rt-center">
-            <img src="/image/icon-3.png" />
+            <Image width={40} height={40} alt='logo' src="/image/icon-3.png" />
           </div>
           <div className="inside left">
-            <h6 className="rt rt-400 rt-555 rt-15">بررسی قبل از خرید</h6>
-            <p className="rt rt-13 rt-300 rt-777">بدون هیچ مشکلی</p>
+            <h6 className="rt rt-400 rt-555 rt-15">Technical Check </h6>
+            <p className="rt rt-13 rt-300 rt-777"> On all Products</p>
           </div>
         </div>
 
         <div className="item right rt-bg">
           <div className="icon rt-50px rt-center">
-            <img src="/image/icon-4.png" />
+            <Image width={40} height={40} alt='logo' src="/image/icon-4.png" />
           </div>
           <div className="inside left">
-            <h6 className="rt rt-400 rt-555 rt-15">پرداخت ایمن</h6>
-            <p className="rt rt-13 rt-300 rt-777">بهترین قیمت ها</p>
+            <h6 className="rt rt-400 rt-555 rt-15"> Safe payment</h6>
+            <p className="rt rt-13 rt-300 rt-777"> Best prices</p>
           </div>
         </div>
 
         <div className="item right rt-bg">
           <div className="icon rt-50px rt-center">
-            <img src="/image/icon-5.png" />
+            <Image width={40} height={40} alt='logo' src="/image/icon-5.png" />
           </div>
           <div className="inside left">
-            <h6 className="rt rt-400 rt-555 rt-15">زیبایی سایت</h6>
-            <p className="rt rt-13 rt-300 rt-777">یک قالب حرفه ای</p>
+            <h6 className="rt rt-400 rt-555 rt-15"> Beautiful web page</h6>
+            <p className="rt rt-13 rt-300 rt-777"> Nice UI Design</p>
           </div>
         </div>
       </div>

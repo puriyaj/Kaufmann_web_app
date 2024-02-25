@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const FooterComponent = () => {
@@ -8,47 +9,47 @@ export const FooterComponent = () => {
           <div className="main">
             <div className="item right rt-bg">
               <div className="icon rt-50px rt-center">
-                <img src="/image/icon-1.png" />
+                <Image width={40} height={40} alt='logo' src="/image/icon-1.png" />
               </div>
               <div className="inside left">
-                <h6 className="rt rt-400 rt-555 rt-15">ارسال رایگان</h6>
-                <p className="rt rt-13 rt-300 rt-777">برای تمامی سفارشات</p>
+                <h6 className="rt rt-400 rt-555 rt-15">Free Delivery</h6>
+                <p className="rt rt-13 rt-300 rt-777">For All Products</p>
               </div>
             </div>
             <div className="item right rt-bg">
               <div className="icon rt-50px rt-center">
-                <img src="/image/icon-2.png" />
+                <Image src="/image/icon-2.png" width={40} height={40} alt='logo'/>
               </div>
               <div className="inside left">
-                <h6 className="rt rt-400 rt-555 rt-15">بازگشت پول</h6>
-                <p className="rt rt-13 rt-300 rt-777">در صورت عدم رضایت</p>
+                <h6 className="rt rt-400 rt-555 rt-15">Money Back </h6>
+                <p className="rt rt-13 rt-300 rt-777">in 14 Days</p>
               </div>
             </div>
             <div className="item right rt-bg">
               <div className="icon rt-50px rt-center">
-                <img src="/image/icon-3.png" />
+                <Image width={40} height={40} alt='logo' src="/image/icon-3.png" />
               </div>
               <div className="inside left">
-                <h6 className="rt rt-400 rt-555 rt-15">بررسی قبل از خرید</h6>
-                <p className="rt rt-13 rt-300 rt-777">بدون هیچ مشکلی</p>
+                <h6 className="rt rt-400 rt-555 rt-15">Technical Check</h6>
+                <p className="rt rt-13 rt-300 rt-777">For All Products</p>
               </div>
             </div>
             <div className="item right rt-bg">
               <div className="icon rt-50px rt-center">
-                <img src="/image/icon-4.png" />
+                <Image width={40} height={40} alt='logo' src="/image/icon-4.png" />
               </div>
               <div className="inside left">
-                <h6 className="rt rt-400 rt-555 rt-15">پرداخت ایمن</h6>
-                <p className="rt rt-13 rt-300 rt-777">بهترین قیمت ها</p>
+                <h6 className="rt rt-400 rt-555 rt-15">Safe Payment</h6>
+                <p className="rt rt-13 rt-300 rt-777">Best Prices</p>
               </div>
             </div>
             <div className="item right rt-bg">
               <div className="icon rt-50px rt-center">
-                <img src="/image/icon-5.png" />
+                <Image width={40} height={40} alt='logo' src="/image/icon-5.png" />
               </div>
               <div className="inside left">
-                <h6 className="rt rt-400 rt-555 rt-15">زیبایی سایت</h6>
-                <p className="rt rt-13 rt-300 rt-777">یک قالب حرفه ای</p>
+                <h6 className="rt rt-400 rt-555 rt-15">Beutiful website</h6>
+                <p className="rt rt-13 rt-300 rt-777">Nice UI Design</p>
               </div>
             </div>
           </div>
@@ -56,37 +57,35 @@ export const FooterComponent = () => {
 
         <div className="block-f block-f-1 right">
           <div className="title rt rt-relative">
-            <h3 className="right rt-15 rt-555 rt-bold rt-relative">درباره ما</h3>
+            <h3 className="right rt-15 rt-555 rt-bold rt-relative">About Us</h3>
           </div>
-          <p className="rt rt-555 rt-14">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای
-            شرایط فعلی تکنولوژی
+          <p className="rt rt-555 rt-14">Lorem Ipsum is a dummy text produced with simplicity and unintelligibility in the printing industry, using graphic designers. Printers and texts, whether newspapers or magazines, are arranged in columns and rows as needed for current technology conditions.
           </p>
         </div>
 
         <div className="block-f block-f-2 right">
           <div className="title rt rt-relative">
-            <h3 className="right rt-15 rt-555 rt-bold rt-relative">فهرست اصلی</h3>
+            <h3 className="right rt-15 rt-555 rt-bold rt-relative">Main Menu</h3>
           </div>
           <ul className="menu rt rt-14">
             <li className="rt">
               <a href="#" className="rt rt-555">
-                <i className="fa fa-circle"></i> فروشگاه
+                <i className="fa fa-circle">Shop</i>
               </a>
             </li>
             <li className="rt">
               <a href="#" className="rt rt-555">
-                <i className="fa fa-circle"></i> وبلاگ
+                <i className="fa fa-circle">Blog</i> 
               </a>
             </li>
             <li className="rt">
               <a href="#" className="rt rt-555">
-                <i className="fa fa-circle"></i> درباره ما
+                <i className="fa fa-circle">About Us</i>
               </a>
             </li>
             <li className="rt">
               <a href="#" className="rt rt-555">
-                <i className="fa fa-circle"></i> ارتباط با ما
+                <i className="fa fa-circle">Contact</i>
               </a>
             </li>
           </ul>
@@ -95,7 +94,7 @@ export const FooterComponent = () => {
         <div className="block-f block-f-3 right">
           <ul className="rt rt-14 rt-555 address">
             <li className="rt">
-              <i className="fa fa-map-o"></i> <span className="left">بندرترکمن خیابان استقلال- استقلال 28</span>
+              <i className="fa fa-map-o"></i> <span className="left">Berlin - Kreuzberg 9</span>
             </li>
             <li className="rt">
               <i className="fa fa-phone"></i>{' '}
@@ -106,7 +105,7 @@ export const FooterComponent = () => {
             <li className="rt">
               <i className="fa fa-envelope-o"></i>{' '}
               <a href="mailt:mohammadmrb.org@gmail.com" className="left rt-555">
-                mohammadmrb.org@gmail.com
+                puriyaj@gmail.com
               </a>
             </li>
           </ul>
@@ -127,13 +126,13 @@ export const FooterComponent = () => {
         </div>
 
         <div className="block-f block-f-4 right rt-align">
-          <img src="/image/demo/g.png" />
-          <img src="/image/demo/h.png" />
+          <Image width={40} height={40} alt='logo' src="/image/demo/g.png" />
+          <Image width={40} height={40} alt='logo' src="/image/demo/h.png" />
         </div>
       </div>
 
       <div className="copyright rt">
-        <div className="main rt-14 rt-100">این سایت توسط محمد امین اونق طراحی و کدنویسی شده است.</div>
+        <div className="main rt-14 rt-100">Pouria Jangjooy Mehrangiz</div>
       </div>
     </footer>
   );

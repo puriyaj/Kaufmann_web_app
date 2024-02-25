@@ -16,16 +16,16 @@ export const SearchBox = () => {
   }, [query]);
   return (
     <div className="search-box right rt-relative">
-      <input onChange={(e) => setQuery(e.target.value ?? '')} className="rt rt-30px rt-400 rt-13" type="text" placeholder="جستجو در بین محصولات ، وبلاگ و دسته بندی ها" />
+      <input onChange={(e) => setQuery(e.target.value ?? '')} className="rt rt-30px rt-400 rt-13" type="text" placeholder="         Find Your Product Hier" />
       <i className="fa fa-search rt-absolute left"></i>
       <span className="close" id="close-search">
-        بستن
+        Close
       </span>
       <span className="close" id="close-search-bg"></span>
       {query.trim().length > 1 && (
         <ul className="search_result rt rt-14 rt-absolute rt-bg rt-10px">
           <h4>
-            <span className="badge badge-info">محصولات</span>
+            <span className="badge badge-info">Products</span>
           </h4>
           <div id="search_products">
             {products?.map((it) => (

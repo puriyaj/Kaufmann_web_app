@@ -9,31 +9,31 @@ import { signOut } from 'next-auth/react'
 import { useSession } from 'next-auth/react';
 const menu = [
   {
-    name: 'اطلاعات حساب',
+    name: 'Profile',
     img:'/image/icon/avatar-svgrepo-com.svg',
     page: <Info/> ,
     num: 0
   },
   {
-    name: 'لیست ها',
+    name: 'My Products',
     img:'/image/icon/heart-svgrepo-com.svg',
     page: <List/> ,
     num: 1
   },
   {
-    name: 'سفارش های من',
+    name: 'My Orders',
     img:'/image/icon/shopping-cart-svgrepo-com.svg',
     page: <Order/> ,
     num: 2
   },
   {
-    name: 'اطلاعات پرداخت',
+    name: 'Payment',
     img:'/image/icon/monitor-svgrepo-com.svg',
     page: <Payment/> ,
     num: 3
   },
   {
-    name: 'خروخ',
+    name: 'Exit',
     img:'/image/icon/exit.svg',
     page: '' ,
     num: 4
@@ -60,7 +60,7 @@ function Profile() {
 
     </div>
 
-    <ul className='flex flex-col gap-3 pt-2 w-max'>
+    <ul className='flex flex-col gap-3 pt-2 w-max justify-center '>
       {menu.map((item,index )=>(
          <div key={index} className='flex gap-2'>
         <Image src={item.img} width={20} height={20} alt = 'logo' />

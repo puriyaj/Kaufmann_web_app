@@ -89,6 +89,26 @@ model User {
   cart          Cart[]
   invoice       Invoice[]
   payment       Payment[]
+  userData      UsrData[]
+}
+
+enum TYPE {
+  PREMIUM
+  DEFAULT
+}
+
+model UsrData {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  password      String?
+  image         String?
+  bith          String?
+  AccountType   TYPE @default(DEFAULT)
+   userId        String
+  user           User              @relation(fields: [userId], references: [id])
+
 
 }
 

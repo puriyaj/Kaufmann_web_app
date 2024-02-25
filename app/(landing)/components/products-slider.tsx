@@ -9,11 +9,11 @@ export const ProductsSlider = () => {
           <div className="title rt rt-relative">
             <h3 className="name rt-22 rt-444 rt-medium">
               <a href="#" className="rt-medium rt-444">
-                گوشی موبایل
+                 Mobile
               </a>
             </h3>
             <a href="#" className="show-all left">
-              محصولات بیشتر
+               More Products
             </a>
           </div>
           <div className="slider-5 rt rt-relative owl-carousel">

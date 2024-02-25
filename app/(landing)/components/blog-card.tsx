@@ -11,18 +11,16 @@ export const BlogCard = () => {
       </a>
       <div className="inside rt">
         <h2 className="rt rt-16 rt-relative">
-          <a href="#" className="rt rt-555 rt-400">
-            چرا باید بهترین ها را داشته باشیم؟ به سادگی
-          </a>
+          <a href="#" className="rt rt-555 rt-400">Why should we have the best? Simply</a>
         </h2>
-        <div className="matn rt-14 rt">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک ...</div>
+        <div className="matn rt-14 rt">Lorem Ipsum is a dummy text produced with simplicity and unintelligibility in the printing industry, using graphic designers...</div>
         <span className="cate rt-666 rt-14 right rt-400">
           <div className="icon right rt-center rt-18">
             <i className="fa fa-eye"></i>
           </div>{' '}
-          443 بازدید
+          443 views
         </span>
-        <span className="date rt-666 rt-14 left">29 فروردین 1400</span>
+        <span className="date rt-666 rt-14 left">29 Feb 2024</span>
       </div>
     </article>
   );

@@ -1,13 +1,17 @@
 import React from 'react'
 import Image from 'next/image'
+import { useSession } from 'next-auth/react';
+import { Session } from 'inspector';
+import { userAgent } from 'next/server';
 function Info() {
+  const { data, status } = useSession();
   return (
     <>
      <div className='grid grid-cols-2 grid-rows-3 gap-20 p-5   bg-gray-100 rounded-2xl shadow-xl h-full'>
 <div className='border-b-4 flex justify-between gap-20'>
   <div>
-    <p>نام و نام خانوادگی</p>
-     <p>ایلمان</p> 
+    <p>Name & Last Name</p>
+     <p>{data?.user.name}</p> 
   </div>
      <Image src="/image/icon/edit.svg" width={30} height={30} alt="logo" />
     </div>
@@ -15,7 +19,7 @@ function Info() {
     <div className='border-b-4 flex justify-between gap-20'>
       
       <div>
-     <p>شماره تلفن همراه</p>
+     <p>Phone Number</p>
      <p>۰۹۱۲۰۰۰۰۰۰</p> 
       </div>
       <Image src="/image/icon/edit.svg" width={30} height={30} alt="logo" />
@@ -23,7 +27,7 @@ function Info() {
 
     <div className='border-b-4 flex justify-between gap-20'>
       <div>
-        <p>تاریخ تولد</p>
+        <p>Date of Birth</p>
      <p>۰۱،۰۲،۱۹۹۹</p> 
       </div>
      
@@ -31,24 +35,24 @@ function Info() {
 
     <div className='border-b-4 flex justify-between gap-20'>
     <div>
-        <p>کد ملی</p>
-     <p>۰۰۲۸۳۸۴۸۴۸۵</p> 
+        <p>Account</p>
+     <p>Premium</p> 
         </div>
         <Image src="/image/icon/edit.svg" width={30} height={30} alt="logo" />
     </div>
 
     <div className='border-b-4 flex justify-between gap-20'>
     <div>
-        <p>پست الکترونیک</p>
-     <p>حمصلحنصلقنقحل</p> 
+        <p>Email</p>
+     <p>{data?.user.email}</p> 
         </div>
         <Image src="/image/icon/edit.svg" width={30} height={30} alt="logo" />
     </div>
 
     <div className='border-b-4 flex justify-between gap-20'>
     <div>
-       <p>رمز عبور</p>
-     <p>۰۹۲۳۴۵۷۸۲۴۵۷</p>  
+       <p>password</p>
+     <p>{data?.user.password}</p>  
         </div>
         <Image src="/image/icon/edit.svg" width={30} height={30} alt="logo" />
     </div>

@@ -29,12 +29,12 @@ export default async function Layout({ children }: { children: React.ReactNode }
                 <i className="fa fa-percent"></i>
               </div>
               <span className="right rt-15 rt-666">
-                ارسال رایگان برای سفارش های بالای <samp className="rt-medium">200 هزار تومان</samp> به بالا
+                      <samp className="rt-medium">10% Discount for valentine Day</samp>
               </span>
             </div>
 
             <a href="mailto:address@email.com" className="left">
-              <span className="right rt-15 rt-666">youraddress@email.com</span>
+              <span className="right rt-15 rt-666">puriyaj@gmail.com</span>
               <div className="icon rt-bg right rt-50px rt-center rt-rang rt-16">
                 <i className="fa fa-envelope-o"></i>
               </div>
@@ -49,7 +49,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
         </nav>
         <div className="main">
           <Link href="/">
-            <Image src="/image/logo.png" width={150} height={45} alt="" className="logo right" />
+            <h1 className='logo right font-bold text-red-500 text-2xl'>Kaufmann</h1>
           </Link>
 
           <SearchBox />
@@ -58,8 +58,8 @@ export default async function Layout({ children }: { children: React.ReactNode }
             <button id="menu-btn" className="btn-menu right rt-pointer rt-50px rt-23 rt-999">
               <i className="fa fa-bars"></i>
             </button>
-            <Link href="/login" className={`btn rt-color rt-fff  ${session?.user.name ? 'user-panel':''} rt-5px rt-400 left`}>
-              <i className="fa fa-user-o right"></i> ورود و ثبت نام
+            <Link href={session?.user.name ? "/profile":"/login"} className={`btn rt-color rt-fff  ${session?.user.name ? 'user-panel':''} rt-5px rt-400 left`}>
+              <i className="fa fa-user-o right"> {session?.user.name ? 'Hi ':''}{session?.user.name ? session.user.name:' Login / Sign Up'}</i>  
             </Link>
           
             <Link href="/cart" className="btn mini-btn rt-555 rt-5px rt-400 rt-relative left">
@@ -77,7 +77,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
           <div className="list rt">
             <div className="right rt-relative categorys">
               <span className="right rt-14 rt-pointer rt-666 rt-medium btn">
-                <i className="fa fa-bars right"></i> دسته بندی ها
+                <i className="fa fa-bars right"> Menu</i>  
               </span>
               <div className="entery rt rt-absolute">
                 <ul className="category rt rt-bg rt-14 rt-20px">
@@ -98,22 +98,22 @@ export default async function Layout({ children }: { children: React.ReactNode }
             <ul className="menu right rt-14">
               <li className="right">
                 <Link href="/products" className="rt-666 rt-medium right">
-                  تمام محصولات
+                  All Products
                 </Link>
               </li>
               <li className="right">
                 <Link href="/blog" className="rt-666 rt-medium right">
-                  وبلاگ
+                  Blog
                 </Link>
               </li>
               <li className="right">
                 <Link href="/about" className="rt-666 rt-medium right">
-                  درباره ما
+                   About Us
                 </Link>
               </li>
               <li className="right">
                 <Link href="/contact" className="rt-666 rt-medium right">
-                  ارتباط با ما
+                   Contact
                 </Link>
               </li>
             </ul>
@@ -121,7 +121,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
               <div className="icon rt-18 right rt-center">
                 <i className="fa fa-ticket"></i>
               </div>{' '}
-              تخفیف های شگفت انگیز
+               Amazing Offers  
             </a>
           </div>
         </div>
@@ -145,36 +145,36 @@ export default async function Layout({ children }: { children: React.ReactNode }
         <ul className="menu rt-14 rt" id="accordionb">
           <li className="thatlinkx">
             <Link href="/" className="rt-medium">
-              <i className="fa fa-home rt-999 right icon"></i> صفحه اصلی
+              <i className="fa fa-home rt-999 right icon">Main Menu</i>
             </Link>
           </li>
           <li className="thatlinkx">
             <Link href="/products" className="rt-medium">
-              <i className="fa fa-inbox rt-999 right icon"></i> تمام محصولات
+              <i className="fa fa-inbox rt-999 right icon">Products</i>
             </Link>
           </li>
           <li className="thatlinkx">
             <Link href="/blog" className="rt-medium">
-              <i className="fa fa-file-text-o rt-999 right icon"></i> وبلاگ
+              <i className="fa fa-file-text-o rt-999 right icon">Blog</i>
             </Link>
           </li>
           <li className="thatlinkx">
             <Link href="/about" className="rt-medium">
-              <i className="fa fa-info-circle rt-999 right icon"></i> درباره ما
+              <i className="fa fa-info-circle rt-999 right icon">About Us</i>
             </Link>
           </li>
           <li className="thatlinkx">
             <Link href="/contact" className="rt-medium">
-              <i className="fa fa-envelope-o rt-999 right icon"></i> تماس با ما
+              <i className="fa fa-envelope-o rt-999 right icon">Contact</i>
             </Link>
           </li>
           <div className="rt thr"></div>
 
-          <div className="rt rt-bold rt-15 title rt-333">دسته بندی محصولات</div>
+          <div className="rt rt-bold rt-15 title rt-333">Products</div>
 
           <li>
             <a href="#" className="rt rt-absolute thislinksz"></a>
-            <span className="link rt rt-pointer rt-medium">محصولات تخفیف خورده</span>
+            <span className="link rt rt-pointer rt-medium">Discounts</span>
           </li>
 
           {categories?.map((cat) => (

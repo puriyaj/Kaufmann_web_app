@@ -16,9 +16,10 @@ type FormValues = {
 export default function Login() {
   const { data, status } = useSession();
   const { toast } = useToast()
-  console.log('data', data);
+  console.log(data?.user,status);
   if (status == 'authenticated' && data.user.role == USER_ROLE.USER) redirect('/profile');
   if (status == 'authenticated' && data.user.role == USER_ROLE.SUPER) redirect('/dashboard');
+
   
 
   const { handleSubmit, control } = useForm<FormValues>();
@@ -62,6 +63,8 @@ export default function Login() {
           <p>
             Dont have an account?<Link href="/register">Sign Up</Link>
           </p>
+
+          <Button type="submit" onClick={() => signIn('google',{ callbackUrl: 'http://localhost:3000/profile'})}>google</Button>
         </div>
       </form>
     </div>

@@ -17,12 +17,12 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -30,13 +30,31 @@ model Account {
   @@unique([provider, providerAccountId])
 }
 
+
+
+
 model Session {
   id           String   @id @default(cuid())
-  sessionToken String   @unique
   userId       String
   expires      DateTime
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sessionToken String   @unique
+  accessToken  String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id])
 }
+
+model VerificationRequest {
+  id         String   @id @default(cuid())
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([identifier, token])
+}
+
 
 model VerificationToken {
   identifier String
@@ -56,22 +74,22 @@ enum USER_ROLE {
 model User {
   id            String    @id @default(cuid())
   name          String?
-  email         String    @unique
-  password      String
+  email         String?   @unique
   emailVerified DateTime?
+  password      String?
   image         String?
   role          USER_ROLE @default(USER)
-  extra         Json? //fullName , province, city, address , postCode, 
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   accounts      Account[]
   sessions      Session[]
-  products      Product[]
-  comments      Comment[]
-  tickets       Ticket[]
-  carts         Cart[]
-  invoices      Invoice[]
-  payments      Payment[]
+  product       Product[]
+  comment       Comment[]
+  ticket        Ticket[]
+  cart          Cart[]
+  invoice       Invoice[]
+  payment       Payment[]
+
 }
 
 enum BANNER_POSITION {

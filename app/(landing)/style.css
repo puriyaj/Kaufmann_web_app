@@ -1,5 +1,5 @@
 @charset "utf-8";
-*{margin:0;padding:0;font-weight:300;font-style:normal;direction:rtl;font-family:"iranyekan","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;-webkit-transition-duration:0.3s;transition-duration:0.3s}
+*{margin:0;padding:0;font-weight:300;font-style:normal;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;-webkit-transition-duration:0.3s;transition-duration:0.3s}
 *,::before,::after{outline:none;box-sizing:border-box}
 ul,li{list-style:none}
 a{text-decoration:none}

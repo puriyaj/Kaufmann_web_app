@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer';
 import { SearchBox } from './components/search-box';
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../utils/auth";
+import { Toaster } from "@/components/ui/toaster"
 export const dynamic = 'force-dynamic';
 
 export default async function Layout({ children }: { children: React.ReactNode }) {
@@ -17,8 +18,10 @@ export default async function Layout({ children }: { children: React.ReactNode }
   
   return (
     <>
-      {/* <Nav /> */}
-      <header className="">
+    <div className='flex flex-col'>
+    
+ {/* <Nav /> */}
+ <header className="">
         <nav className="rt">
           <div className="main">
             <div className="notic right">
@@ -125,8 +128,9 @@ export default async function Layout({ children }: { children: React.ReactNode }
       </header>
       <main>
         {children}
-      </main>
         
+      </main>
+      
  
       
       <FooterComponent />
@@ -195,6 +199,10 @@ export default async function Layout({ children }: { children: React.ReactNode }
           ))}
         </ul>
       </div>
+      
+    </div>
+    <Toaster />
+      
       <Script async src="/js/jquery.js" />
       <Script async src="/js/owl.carousel.js" />
       <Script async src="/js/java.js" />

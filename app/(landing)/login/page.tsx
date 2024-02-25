@@ -6,6 +6,7 @@ import { useSession, signIn } from 'next-auth/react';
 import { redirect, useRouter } from 'next/navigation';
 import { Button, InputBox } from '@cmp/ui';
 import { USER_ROLE } from '@prisma/client';
+import { useToast } from "@/components/ui/use-toast"
 
 type FormValues = {
   email: string;
@@ -14,9 +15,12 @@ type FormValues = {
 
 export default function Login() {
   const { data, status } = useSession();
+  const { toast } = useToast()
   console.log('data', data);
   if (status == 'authenticated' && data.user.role == USER_ROLE.USER) redirect('/profile');
   if (status == 'authenticated' && data.user.role == USER_ROLE.SUPER) redirect('/dashboard');
+  
+
   const { handleSubmit, control } = useForm<FormValues>();
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
@@ -25,10 +29,17 @@ export default function Login() {
     signIn('credentials', {
       email: data.email,
       password: data.password,
+      redirect: false,
     }).then((res) => {
       console.log('res login===>', res);
       if (res?.error) {
-        console.log(res.error);
+        toast({
+          className: "bg-red-500",
+          variant: "destructive",
+          title: "Error",
+          description: "Email or Password is wrong",
+          
+        })
       }
     });
   };

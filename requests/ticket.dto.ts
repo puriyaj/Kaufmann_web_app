@@ -1,4 +1,4 @@
-import { ACTIVATION_STATUS } from '@prisma/client';
+import { ACTIVATION_STATUS } from '../prisma/generated/client';
 import { IsEmail, IsEnum, IsNotEmpty, IsNumber, IsOptional, MinLength } from 'class-validator';
 
 export class CreateTicket {

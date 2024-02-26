@@ -1,4 +1,4 @@
-import { ACTIVATION_STATUS, BANNER_POSITION } from "@prisma/client";
+import { ACTIVATION_STATUS, BANNER_POSITION } from "../prisma/generated/client";
 import { IsEnum, IsNotEmpty, IsOptional } from "class-validator";
 
 export class CreateBanner {

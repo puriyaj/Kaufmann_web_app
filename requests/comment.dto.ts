@@ -1,4 +1,4 @@
-import { ACTIVATION_STATUS } from '@prisma/client';
+import { ACTIVATION_STATUS } from '../prisma/generated/client';
 import { IsBoolean, IsEnum, IsNotEmpty, IsNumber, IsOptional, MinLength } from 'class-validator';
 
 export class CreateComment {

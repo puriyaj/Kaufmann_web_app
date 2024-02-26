@@ -1,4 +1,4 @@
-import { ACTIVATION_STATUS, Stock } from '@prisma/client';
+import { ACTIVATION_STATUS, Stock } from '../prisma/generated/client';
 import { NextRequest } from 'next/server';
 import { Badge } from '@cmp/ui/components/badge';
 import { activation_status_details } from './constants';

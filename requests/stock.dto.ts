@@ -1,5 +1,5 @@
 import { CURRENCY_TYPE } from '../prisma/generated/client';
-import { Decimal } from "@prisma/client/runtime/library";
+import { Decimal } from "../prisma/generated/client/runtime/library";
 import { IsBoolean, IsEnum, IsNotEmpty, IsNumber, IsOptional, MinLength } from "class-validator";
 
 export class CreateStock {

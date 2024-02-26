@@ -1,4 +1,4 @@
-import { BANNER_POSITION } from '@prisma/client';
+import { BANNER_POSITION } from '../prisma/generated/client';
 import { banner_position_details } from '@utils/constants';
 import React from 'react';
 import { Control, Controller, RegisterOptions } from 'react-hook-form';

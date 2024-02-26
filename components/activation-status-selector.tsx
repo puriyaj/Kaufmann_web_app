@@ -1,4 +1,4 @@
-import { ACTIVATION_STATUS } from '@prisma/client';
+import { ACTIVATION_STATUS } from '../prisma/generated/client';
 import { activation_status_details } from '@utils/constants';
 import React from 'react';
 import { Control, Controller, RegisterOptions } from 'react-hook-form';

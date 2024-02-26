@@ -6,11 +6,11 @@ import { authOptions } from '@utils/auth';
 import { getServerSession } from 'next-auth';
 import { revalidateTag } from 'next/cache';
 import { prisma } from '@utils/prisma';
-import type {Banner} from '@prisma/client'
+import type {Prisma,Banner} from '@prisma/client'
 import { CACHE_BANNERS } from '@utils/cache-tags';
 import { CreateBanner, DeleteBanner, UpdateBanner } from 'requests/banner.dto';
 
-export const getBanners = async (): Promise<Banner[]> => {
+export const getBanners = async (): Promise<Banner []> => {
   const url = `${API_URL}/banners`;
   const response = await fetch(url, { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_BANNERS] } });
 

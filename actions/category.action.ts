@@ -11,7 +11,7 @@ import { prisma } from '@utils/prisma';
 import { Paginated } from 'types/page';
 import { makeUrl } from '@utils/utils';
 import { CategoryWithChildrens } from 'types/types';
-import { Category } from '@prisma/client';
+import { Category } from '../prisma/generated/client';
 
 export const getCategories = async (page: number = 1, query?: string): Promise<Paginated<CategoryWithChildrens>> => {
   const url = makeUrl(`${API_URL}/categories`, { page, query });

@@ -1,5 +1,5 @@
 'use server';
-import { ACTIVATION_STATUS, Product } from '@prisma/client';
+import { ACTIVATION_STATUS, Product } from '../prisma/generated/client';
 import { CACHE_PRODUCTS } from '@utils/cache-tags';
 import { API_URL, UNAUTORIZED_MESSAGE } from '@utils/constants';
 import { GeneralError, ResponseEntity } from '@utils/genral-error';

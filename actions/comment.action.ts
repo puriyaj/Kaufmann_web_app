@@ -11,7 +11,7 @@ import { Paginated } from 'types/page';
 import { CommentWithProduct } from 'types/types';
 import { CACHE_COMMENTS } from '@utils/cache-tags';
 import { CreateComment, DeleteComment, UpdateComment, UpdateCommentStatus } from 'requests/comment.dto';
-import { ACTIVATION_STATUS } from '@prisma/client';
+import { ACTIVATION_STATUS } from '../prisma/generated/client';
 
 export const getComments = async (page: number, query?: string, productId?: string): Promise<Paginated<CommentWithProduct>> => {
   const url = makeUrl(`${API_URL}/comments`, { page, query, productId });

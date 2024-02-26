@@ -11,7 +11,7 @@ import { Paginated } from 'types/page';
 import { deleteComment } from 'actions/comment.action';
 import { useCommentStatusModal } from './comment-status-modal';
 import { useConfirmation } from '@utils/hooks/confirmation.provider';
-
+import type {BadgeColors }from '@cmp/ui/components/badge'
 type Props = {
   comments: Paginated<CommentWithProduct>;
 };
@@ -30,7 +30,7 @@ export const CommentsList: React.FC<Props> = ({ comments }) => {
         message: item.message,
         product: item.product?.name,
         stars: item.stars,
-        status: <Badge color={activation_status_details[item.status]?.color}>{activation_status_details[item.status]?.faName as string}</Badge>,
+        status: <Badge color={activation_status_details[item.status]?.color as string}>{activation_status_details[item.status]?.faName as string}</Badge>,
         createdAt: moment(item.createdAt).format('YYYY/MM/DD'),
         action: (
           <div className="flex justify-end gap-1">

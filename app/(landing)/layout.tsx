@@ -18,7 +18,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
   
   return (
     <>
-    <div className='flex flex-col'>
+    <div className='flex flex-col w-full'>
     
  {/* <Nav /> */}
  <header className="">
@@ -139,33 +139,33 @@ export default async function Layout({ children }: { children: React.ReactNode }
       <div id="mob-menu" className="mob-menu rt-bg right">
         <div className="logo rt rt-align">
           <Link href="/" className="rt">
-            <Image src="/image/logo.png" alt="logo" className="right" width={100} height={35} />
+            <p className='right text-2xl font-bold text-red-500'>Kaufmann</p>
           </Link>
         </div>
         <ul className="menu rt-14 rt" id="accordionb">
           <li className="thatlinkx">
             <Link href="/" className="rt-medium">
-              <i className="fa fa-home rt-999 right icon">Main Menu</i>
+              <i className="fa fa-home rt-999 icon"> Main Menu</i>
             </Link>
           </li>
           <li className="thatlinkx">
             <Link href="/products" className="rt-medium">
-              <i className="fa fa-inbox rt-999 right icon">Products</i>
+              <i className="fa fa-inbox rt-999  icon"> Products</i>
             </Link>
           </li>
           <li className="thatlinkx">
             <Link href="/blog" className="rt-medium">
-              <i className="fa fa-file-text-o rt-999 right icon">Blog</i>
+              <i className="fa fa-file-text-o rt-999  icon"> Blog</i>
             </Link>
           </li>
           <li className="thatlinkx">
             <Link href="/about" className="rt-medium">
-              <i className="fa fa-info-circle rt-999 right icon">About Us</i>
+              <i className="fa fa-info-circle rt-999  icon"> About Us</i>
             </Link>
           </li>
           <li className="thatlinkx">
             <Link href="/contact" className="rt-medium">
-              <i className="fa fa-envelope-o rt-999 right icon">Contact</i>
+              <i className="fa fa-envelope-o rt-999  icon"> Contact</i>
             </Link>
           </li>
           <div className="rt thr"></div>
@@ -174,12 +174,12 @@ export default async function Layout({ children }: { children: React.ReactNode }
 
           <li>
             <a href="#" className="rt rt-absolute thislinksz"></a>
-            <span className="link rt rt-pointer rt-medium">Discounts</span>
+            <span className="pl-5 rt rt-pointer rt-medium">Discounts</span>
           </li>
 
           {categories?.map((cat) => (
             <li key={cat.id}>
-              <span className="link rt rt-pointer">
+              <span className="pl-5 rt rt-pointer">
                 {cat.name}
                 <i className="fa fa-angle-down"></i>
               </span>
@@ -201,7 +201,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
       </div>
       
     </div>
-    <Toaster />
+    <Toaster/>
       
       <Script async src="/js/jquery.js" />
       <Script async src="/js/owl.carousel.js" />

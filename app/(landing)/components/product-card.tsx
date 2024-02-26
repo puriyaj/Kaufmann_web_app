@@ -10,7 +10,7 @@ export const ProductCard: React.FC<{ product: ProductWithCategoryAndStock }> = (
   return (
     <article className="mini-product rt-5px rt-bg rt-align rt-relative rt">
       <Link href={`/products/${product.id}`} className="rt-link rt-absolute rt"></Link>
-      <Image src={`${CDN_URI}/${product.images[0]}`} alt="" width={150} height={100} className="photo mx-auto" />
+      <Image src={`${CDN_URI}/${product.images[0]}`} alt="" width={150} height={100} className="photo mx-auto w-auto h-auto" />
       <h2 className="rt">
         <Link href={`/products/${product.id}`} className="rt rt-limit rt-15 rt-555 rt-medium">
           {product?.name}

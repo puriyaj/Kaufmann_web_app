@@ -3,8 +3,8 @@ import { getServerAuthSession } from "@utils/auth";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "TailAdmin | Next.js E-commerce Dashboard Template",
-  description: "This is Home Blog page for TailAdmin Next.js",
+  title: "Admin Dashboard",
+  description: "Just for Admins",
   // other metadata
 };
 

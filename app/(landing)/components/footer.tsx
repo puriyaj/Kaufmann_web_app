@@ -126,8 +126,8 @@ export const FooterComponent = () => {
         </div>
 
         <div className="block-f block-f-4 right rt-align">
-          <Image width={40} height={40} alt='logo' src="/image/demo/g.png" />
-          <Image width={40} height={40} alt='logo' src="/image/demo/h.png" />
+          <Image width={40} height={40} alt='logo' src="/image/demo/g.png" className='w-auto h-auto' priority/>
+          <Image width={40} height={40} alt='logo' src="/image/demo/h.png" className='w-auto h-auto' priority/>
         </div>
       </div>
 

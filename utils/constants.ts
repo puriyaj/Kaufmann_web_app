@@ -5,7 +5,7 @@ export const API_IP = process.env.NODE_ENV == 'production' ? 'https://api.bazarg
 export const ADMIN_URL = `${CLIENT_IP}`;
 export const API_URL = 'http://localhost:3000/api';
 // export const API_URL = `${API_IP}`;
-export const CDN_URI = `https://ilaman.storage.iran.liara.space/`;
+export const CDN_URI = `https://kaufmann-image.s3.eu-central-1.amazonaws.com`;
 export const UPLOAD_URL = '/api/upload';
 
 export const MAX_FILE_SIZE = 2_000_000;

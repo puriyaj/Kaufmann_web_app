@@ -11,5 +11,5 @@ export default async function page({ searchParams }: IPageProps) {
   const subCategoryId = searchParams.cat ?? undefined;
   const products = await getProducts(page, query, subCategoryId);
 
-  return <ProductsList products={products ?? []} />;
+  return <ProductsList products={products} />;
 }

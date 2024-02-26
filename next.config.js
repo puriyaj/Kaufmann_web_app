@@ -18,7 +18,7 @@ const config = {
       },
       {
         protocol: 'https',
-        hostname: 'ilaman.storage.iran.liara.space',
+        hostname: 'kaufmann-image.s3.eu-central-1.amazonaws.com',
         port: '',
         pathname: '/**',
       },{

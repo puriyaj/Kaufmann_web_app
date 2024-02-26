@@ -10,7 +10,7 @@ const BUCKET = process.env.LIARA_BUCKET_NAME;
 const s3 = new S3({
   accessKeyId: ACCESSKEY,
   secretAccessKey: SECRETKEY,
-  endpoint: ENDPOINT,
+  
 });
 export async function POST(request: NextRequest) {
   const data = await request.formData();

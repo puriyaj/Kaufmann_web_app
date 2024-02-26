@@ -6,7 +6,7 @@ export const BlogCard = () => {
     <article className="right rt-bg rt-5px rt-overflow rt-relative">
       <a href="#" className="rt">
         <div className="photo rt">
-          <Image src={`/image/demo/23.jpg`} width={500} height={300} alt="" />
+          <Image src={`/image/demo/23.jpg`} width={500} height={300} alt="" priority className='w-auto h-auto'/>
         </div>
       </a>
       <div className="inside rt">

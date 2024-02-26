@@ -18,7 +18,7 @@ export default function Login() {
   const { toast } = useToast()
   console.log(data?.user,status);
   if (status == 'authenticated' && data.user.role == USER_ROLE.USER) redirect('/profile');
-  if (status == 'authenticated' && data.user.role == USER_ROLE.SUPER) redirect('/dashboard');
+  if (status == 'authenticated' && data.user.role == USER_ROLE.ADMIN) redirect('/dashboard');
 
   
 

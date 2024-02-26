@@ -12,7 +12,7 @@ export const OffersSection = () => {
           <div className="rt rt-relative slider-1 owl-carousel">
             <article className="rt rt-bg rt-10px rt-align rt-relative">
               <a href="#" className="rt-link rt-absolute rt"></a>
-              <Image width={400} height={400} alt='logo' src="/image/demo/1.jpg" className="photo mx-auto" />
+              <Image width={400} height={400} alt='logo' src="/image/demo/1.jpg" className="photo mx-auto w-auto h-auto" priority/>
               <h3 className="rt rt-555 rt-15 rt-400">Food Cream COMEON 400ml</h3>
               <div className="rt rt-price">
                 <del className="rt rt-14 rt-999">
@@ -35,7 +35,8 @@ export const OffersSection = () => {
           <article className="rt rt-bg rt-relative">
             <a href="#" className="rt-link rt-absolute rt"></a>
             <a href="#" className="photo right rt-10px rt-align rt-relative ">
-              <Image className='w-full h-full' width={1000} height={1000} alt='logo' src="/image/demo/2.jpg" />
+              <Image 
+              className='w-auto h-auto' width={1000} height={1000} alt='logo' src="/image/demo/2.jpg"  priority/>
               <span className="darsad rt-absolute rt-medium rt-5px rt-fff rt-15">25% off</span>
             </a>
             <div className="inside left">

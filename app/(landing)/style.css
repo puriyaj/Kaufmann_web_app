@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 *{margin:0;padding:0;font-weight:300;font-style:normal;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;-webkit-transition-duration:0.3s;transition-duration:0.3s}
 *,::before,::after{outline:none;box-sizing:border-box}
 ul,li{list-style:none}
@@ -9,7 +10,7 @@ img{max-width:100%}
 .right{float:right}
 .left{float:left}
 .rt,header,footer{width:100%;float:right}
-.rt-8{font-size:8px}
+.rt-8 
 .rt-9{font-size:9px}
 .rt-10{font-size:10px}
 .rt-11{font-size:11px}
@@ -152,7 +153,7 @@ header .btns .btn.user-panel i{margin-left:0}
 header .list{margin-top:30px}
 header .list .categorys .btn{padding-left:15px;border-left:1px #eee solid;margin:10px 0 10px 10px}
 header .list .categorys .btn i{font-size:20px;margin-left:10px}
-header .list .categorys .entery{width:285px;visibility:hidden;padding-top:17px;top:25px;opacity:0;z-index:9999999999999999999999}
+header .list .categorys .entery{width:100px;visibility:hidden;padding-top:17px;top:25px;opacity:0;z-index:9999999999999999999999}
 header .list .categorys:hover .entery{transition-delay: 0.5s;visibility:visible;top:33px;opacity:1}
 header .list .categorys .entery .category{box-shadow:0 8px 30px 0 rgba(0,0,0,0.2)}
 header .list .menu li a{padding:11px 12px}
@@ -343,7 +344,7 @@ header .list .offers .icon i{margin-top:-4px}
 .contact-us{padding-top:20px}
 .contact-us .side{width:calc(50% - 15px);padding:25px}
 .contact-us .side.right .item{width:50%;padding:15px;height:185px;border-left:1px #e0e0e0 dashed;border-bottom:1px #e0e0e0 dashed}
-.contact-us .side.right .item i{font-size:37px;margin-bottom:15px}
+.contact-us .side.right .item i{font-size:20px;margin-bottom:15px}
 .contact-us .side.right .item:nth-child(2),.contact-us .side.right .item:nth-child(4){border-left:0}
 .contact-us .side.right .item:nth-child(3),.contact-us .side.right .item:nth-child(4){border-bottom:0}
 .blog .entery{width:75%}
@@ -408,7 +409,7 @@ header .list .offers .icon i{margin-top:-4px}
 .mob-menu ul>li>ul>li>a{font-size:13px;padding-right:35px}
 .mob-menu ul>li>ul>li i{margin-right:5px}
 .mob-menu .thr{border-bottom:1px #eee solid;margin:15px 15px 10px 15px;width:calc(100% - 30px);border-bottom:1px #eee solid}
-.mob-menu .thatlinkx i{font-size:17px;margin-top:1px;width:30px}
+.mob-menu .thatlinkx i{font-size:17px;margin-top:1px;width:130px}
 .mob-menu .thatlinkx{padding:3px 0}
 .mob-menu #accordionb{margin-bottom:25px}
 #close-menu-bg{position:fixed;top:0;right:0;background-color:rgba(0,0,0,.6);opacity:0;visibility:hidden;height:100%;z-index:9999999999}
@@ -426,7 +427,7 @@ footer .block-f .title h3::before,.cart .title h3::before{content: "";float: rig
 footer .block-f .title h3{margin-bottom:25px}
 footer .block-f p{line-height:2}
 footer .block-f .menu li a{padding:5px 0}
-footer .block-f .menu li a i{color:#dfdfdf;font-size:8px;margin-left:5px}
+footer .block-f .menu li a i{color:#dfdfdf;font-size:14px;margin-left:5px}
 footer .block-f .address li{padding:8px 0;line-height:2}
 footer .block-f .address li span,footer .block-f .address li a{width:calc(100% - 27px)}
 footer .block-f .social{margin-top:20px}

@@ -53,7 +53,7 @@ const ModalContent: React.FC<ModalContentProps> = ({ closeModal, info }) => {
         <div className="p-4 flex flex-col gap-3">
           <InputBox control={control} name="name" placeholder="Name" rules={{ required: REQUIRED_MESSAGE }} />
 
-          <ImageUploader path="human-avatar" containerClassName="" placeholder="آپلود عکس" filename={watch('image')} onUpload={(fn) => setValue('image', fn)} />
+          <ImageUploader path="human-avatar" containerClassName="" placeholder="Uplod Phto" filename={watch('image')} onUpload={(fn) => setValue('image', fn)} />
           <ToggleSwitch
             name="isMain"
             checked={watch('isMain') ?? false}

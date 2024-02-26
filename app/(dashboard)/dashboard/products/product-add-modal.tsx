@@ -5,7 +5,7 @@ import Modal from '@cmp/modal';
 import { SubCategorySelector } from '@cmp/sub-category-selector';
 import { FileUploader } from '@cmp/ui/FileUploader';
 import { ImageUploader } from '@cmp/ui/image-uploader';
-import { ACTIVATION_STATUS } from '@prisma/client';
+import { ACTIVATION_STATUS } from '../../../../prisma/generated/client';
 import { Button, InputBox, ToggleSwitch } from '@ui';
 import { CDN_URI, REQUIRED_MESSAGE } from '@utils/constants';
 import { handleError } from '@utils/err-handler';

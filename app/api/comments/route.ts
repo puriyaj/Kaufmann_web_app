@@ -1,4 +1,4 @@
-import { Prisma } from '@prisma/client';
+import { Prisma } from '../../../prisma/generated/client';
 import { PAGE_SIZE } from '@utils/constants';
 import { paginatedResponse } from '@utils/helper';
 import { prisma } from '@utils/prisma';

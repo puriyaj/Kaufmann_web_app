@@ -7,7 +7,6 @@ import { getServerSession } from 'next-auth';
 import { revalidateTag } from 'next/cache';
 import { prisma } from '@utils/prisma';
 import type {Banner} from '@prisma/client'
-import ACTIVATION_STATUS from '@prisma/client'
 import { CACHE_BANNERS } from '@utils/cache-tags';
 import { CreateBanner, DeleteBanner, UpdateBanner } from 'requests/banner.dto';
 
@@ -24,7 +23,7 @@ export const getBanners = async (): Promise<Banner[]> => {
 export const getLandingBanners = async (): Promise<Banner[]> => {
   const banners = await prisma.banner.findMany({
     where: {
-      status: ACTIVATION_STATUS.ACCEPTED,
+      status: 'ACCEPTED',
     },
   });
   return banners;

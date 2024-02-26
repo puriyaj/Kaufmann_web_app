@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 import { DELETE_MSG, boolean_details } from '@utils/constants';
 import { Badge } from '@cmp/ui/components/badge';
 import { Paginated } from 'types/page';
-import { Category } from '@prisma/client';
+import { Category } from '../../../../prisma/generated/client';
 import { useRouter } from 'next/navigation';
 import { useConfirmation } from '@utils/hooks/confirmation.provider';
 

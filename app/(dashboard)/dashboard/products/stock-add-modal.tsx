@@ -1,6 +1,6 @@
 'use client';
 import Modal from '@cmp/modal';
-import { CURRENCY_TYPE, Stock } from '@prisma/client';
+import { CURRENCY_TYPE, Stock } from '../../../../prisma/generated/client';
 import { REQUIRED_MESSAGE } from '@utils/constants';
 import { Button, InputBox } from '@ui';
 import { createStock } from 'actions/stock.action';

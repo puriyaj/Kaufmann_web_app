@@ -3,7 +3,7 @@ import { ActivationStatusSelector } from '@cmp/activation-status-selector';
 import { BannerPositionSelector } from '@cmp/banner-position-selector';
 import Modal from '@cmp/modal';
 import { ImageUploader } from '@cmp/ui/image-uploader';
-import { ACTIVATION_STATUS, BANNER_POSITION, Banner } from '@prisma/client';
+import { ACTIVATION_STATUS, BANNER_POSITION, Banner } from '../../../../prisma/generated/client';
 import { Button, InputBox, ToggleSwitch } from '@ui';
 import { REQUIRED_MESSAGE } from '@utils/constants';
 import { handleError } from '@utils/err-handler';

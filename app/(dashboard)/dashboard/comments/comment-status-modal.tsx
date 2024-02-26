@@ -1,7 +1,7 @@
 'use client';
 import { ActivationStatusSelector } from '@cmp/activation-status-selector';
 import Modal from '@cmp/modal';
-import { Comment } from '@prisma/client';
+import { Comment } from '../../../../prisma/generated/client';
 import { Button } from '@ui';
 import { REQUIRED_MESSAGE } from '@utils/constants';
 import { handleError } from '@utils/err-handler';

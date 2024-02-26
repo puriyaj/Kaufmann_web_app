@@ -3,7 +3,7 @@ import { Button, Table, TableHead } from '@cmp/ui';
 import React, { useMemo } from 'react';
 import Image from 'next/image';
 import { ActionButton } from '@cmp/action-button';
-import { Banner } from '@prisma/client';
+import { Banner } from '../../../../prisma/generated/client';
 import moment from 'moment-jalaali';
 import { handleError } from '@utils/err-handler';
 import { toast } from 'react-toastify';

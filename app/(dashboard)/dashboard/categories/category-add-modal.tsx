@@ -2,7 +2,7 @@
 import { CategorySelector } from '@cmp/category-selector';
 import Modal from '@cmp/modal';
 import { ImageUploader } from '@cmp/ui/image-uploader';
-import { Category } from '@prisma/client';
+import { Category } from '../../../../prisma/generated/client';
 import { Button, InputBox, ToggleSwitch } from '@ui';
 import { REQUIRED_MESSAGE } from '@utils/constants';
 import { handleError } from '@utils/err-handler';

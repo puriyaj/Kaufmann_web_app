@@ -1,8 +1,7 @@
 import { NextAuthOptions, getServerSession } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { PrismaAdapter } from "@auth/prisma-adapter"
-import { PrismaClient } from "@prisma/client"
-import { compareSync } from "bcrypt-ts";
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import { compareSync } from "bcrypt-ts"
 import GoogleProvider from "next-auth/providers/google";
 import { prisma } from "@utils/prisma";
 
@@ -17,8 +16,8 @@ export const authOptions: NextAuthOptions = {
 
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
       authorization: {
         params: {
           prompt: "consent",

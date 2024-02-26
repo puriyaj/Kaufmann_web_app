@@ -12,7 +12,7 @@ import { useBannerAddModal } from './banner-add-modal';
 import { DELETE_MSG, activation_status_details, banner_position_details } from '@utils/constants';
 import { Badge } from '@cmp/ui/components/badge';
 import { useConfirmation } from '@utils/hooks/confirmation.provider';
-import { number } from 'yup';
+import { number, string } from 'yup';
 
 type Props = {
   banners: Banner[];
@@ -27,7 +27,7 @@ export const BannersList: React.FC<Props> = ({ banners }) => {
         id: item.id,
         rowsNum: idx + 1,
         title: item.title,
-        position: banner_position_details[item.position]?.faName as string,
+        position: banner_position_details[item.position]?.faName,
         status: <Badge color={activation_status_details[item.status]?.color}>{activation_status_details[item.status]?.faName}</Badge>,
         link: item.link,
         image: item.image ?? '--',

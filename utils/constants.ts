@@ -1,4 +1,4 @@
-import { ACTIVATION_STATUS, BANNER_POSITION, CURRENCY_TYPE } from '@prisma/client';
+import { ACTIVATION_STATUS, BANNER_POSITION, CURRENCY_TYPE } from '../prisma/generated/client'
 
 export const CLIENT_IP = process.env.NODE_ENV == 'production' ? 'https://admin.bazargram.app' : 'http://localhost:3000';
 export const API_IP = process.env.NODE_ENV == 'production' ? 'https://api.bazargram.app' : 'http://localhost:3000/api';

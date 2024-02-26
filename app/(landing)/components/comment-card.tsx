@@ -1,4 +1,4 @@
-import { Comment } from '@prisma/client';
+import { Comment } from '../../../prisma/generated/client';
 import moment, { loadPersian } from 'moment-jalaali';
 import React from 'react';
 import Image from 'next/image';

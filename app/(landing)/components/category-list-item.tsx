@@ -1,4 +1,4 @@
-import { SubCategory } from '@prisma/client';
+
 import Link from 'next/link';
 import React from 'react';
 

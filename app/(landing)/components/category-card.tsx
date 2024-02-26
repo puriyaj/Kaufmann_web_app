@@ -1,4 +1,4 @@
-import { Category } from '@prisma/client';
+import { Category } from '../../../prisma/generated/client';
 import { CDN_URI } from '@utils/constants';
 import { rand } from '@utils/utils';
 import Image from 'next/image';

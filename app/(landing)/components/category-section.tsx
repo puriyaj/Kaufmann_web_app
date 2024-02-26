@@ -1,6 +1,6 @@
 import React from 'react';
 import { CategoryCard } from './category-card';
-import { Category } from '@prisma/client';
+import { Category } from '../../../prisma/generated/client';
 
 export const CategorySection: React.FC<{ categories?: Category[] }> = ({ categories }) => {
   return (

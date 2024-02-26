@@ -1,4 +1,4 @@
-import { BANNER_POSITION, Banner } from '@prisma/client';
+import { BANNER_POSITION, Banner } from '../../../prisma/generated/client';
 import React from 'react';
 import Image from 'next/image';
 import { CDN_URI } from '@utils/constants';

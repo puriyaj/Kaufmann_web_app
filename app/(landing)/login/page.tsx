@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useSession, signIn } from 'next-auth/react';
 import { redirect, useRouter } from 'next/navigation';
 import { Button, InputBox } from '@cmp/ui';
-import { USER_ROLE } from '@prisma/client';
+import { USER_ROLE } from '../../../prisma/generated/client';
 import { useToast } from "@/components/ui/use-toast"
 
 type FormValues = {

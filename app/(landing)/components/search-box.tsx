@@ -1,5 +1,5 @@
 'use client';
-import { Product } from '@prisma/client';
+import { Product } from '../../../prisma/generated/client';
 import { getProducts } from 'actions/product.action';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';

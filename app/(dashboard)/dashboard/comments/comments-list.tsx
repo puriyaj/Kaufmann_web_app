@@ -3,7 +3,6 @@ import { Button, Table, TableHead } from '@cmp/ui';
 import React, { useMemo } from 'react';
 import { ActionButton } from '@cmp/action-button';
 import moment from 'moment-jalaali';
-import { handleError } from '@utils/err-handler';
 import { toast } from 'react-toastify';
 import { DELETE_MSG, activation_status_details } from '@utils/constants';
 import { Badge } from '@cmp/ui/components/badge';
@@ -31,7 +30,7 @@ export const CommentsList: React.FC<Props> = ({ comments }) => {
         message: item.message,
         product: item.product?.name,
         stars: item.stars,
-        status: <Badge color={activation_status_details[item.status]?.color}>{activation_status_details[item.status]?.faName}</Badge>,
+        status: <Badge color={activation_status_details[item.status]?.color}>{activation_status_details[item.status]?.faName as string}</Badge>,
         createdAt: moment(item.createdAt).format('YYYY/MM/DD'),
         action: (
           <div className="flex justify-end gap-1">

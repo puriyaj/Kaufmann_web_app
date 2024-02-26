@@ -26,7 +26,7 @@ export const BannersList: React.FC<Props> = ({ banners }) => {
         id: item.id,
         rowsNum: idx + 1,
         title: item.title,
-        position: banner_position_details[item.position]?.faName,
+        position: banner_position_details[item.position]?.faName as string,
         status: <Badge color={activation_status_details[item.status]?.color}>{activation_status_details[item.status]?.faName}</Badge>,
         link: item.link,
         image: item.image ?? '--',

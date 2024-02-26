@@ -6,7 +6,7 @@ import { authOptions } from '@utils/auth';
 import { getServerSession } from 'next-auth';
 import { revalidateTag } from 'next/cache';
 import { prisma } from '@utils/prisma';
-import { ACTIVATION_STATUS, Banner } from '@prisma/client';
+import type {ACTIVATION_STATUS,Banner} from '@prisma/client'
 import { CACHE_BANNERS } from '@utils/cache-tags';
 import { CreateBanner, DeleteBanner, UpdateBanner } from 'requests/banner.dto';
 

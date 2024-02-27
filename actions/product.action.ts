@@ -1,4 +1,4 @@
-'use server';
+
 import { ACTIVATION_STATUS, Product } from '../prisma/generated/client';
 import { CACHE_PRODUCTS } from '@utils/cache-tags';
 import { API_URL, UNAUTORIZED_MESSAGE } from '@utils/constants';

@@ -2,28 +2,11 @@ import React from 'react';
 import { ProductCard } from '../components/product-card';
 import { Pagination } from '../components/pagination';
 import { IPageProps } from 'types/page';
-import { CACHE_PRODUCTS } from '@utils/cache-tags';
-import { makeUrl } from '@utils/utils';
-import { Paginated } from 'types/page';
-import { ProductInfoWithComments, ProductWithCategoryAndStock } from 'types/types';
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
- 
-type Repo = {
-  name: string
-  stargazers_count: number
-}
+import { getProducts } from 'actions/product.action';
 
 export const dynamic = 'force-dynamic';
-export const getProducts = async (page: number, query?: string, subCategoryId?: string): Promise<Paginated<ProductWithCategoryAndStock>> => {
-  const url = makeUrl(`https://${process.env.VERCEL_URL}/api/products`, { page, query, subCategoryId });
 
-  const response = await fetch(url, { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_PRODUCTS] } });
-
-  const result = await response.json();
-  return result;
-};
-
-export default async function Page({ searchParams }: IPageProps) {
+export default async function Page({ params, searchParams }: IPageProps) {
   const page = Number(searchParams.page ?? 1);
   const query = searchParams.query ?? undefined;
   const subCategoryId = searchParams.cat ?? undefined;

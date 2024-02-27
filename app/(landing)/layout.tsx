@@ -4,21 +4,19 @@ import Script from 'next/script';
 import Link from 'next/link';
 import  CategoryListItem  from './components/category-list-item';
 import Image from 'next/image';
-//import { allCategories, getCategories } from 'actions/category.action';
 import { FooterComponent } from './components/footer';
 import { SearchBox } from './components/search-box';
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../utils/auth";
 import { Toaster } from "@/components/ui/toaster"
-import { prisma } from '@utils/prisma';
 export const dynamic = 'force-dynamic';
-
+import { prisma } from '@utils/prisma';
 export default async function Layout({ children }: { children: React.ReactNode }) {
-  const categories = await prisma.category.findMany({
-    where: {
-      isMain: true,
-    },
+  const categories =  await prisma.category.findMany({
+    orderBy: [{ createdAt: 'desc' }],
+    include: { subCategories: { select: { id: true, name: true } } },
   });
+
   const session = await getServerSession(authOptions);
   
   return (

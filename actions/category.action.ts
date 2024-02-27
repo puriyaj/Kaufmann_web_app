@@ -24,7 +24,7 @@ export const getCategories = async (page: number = 1, query?: string): Promise<P
 };
 export const allCategories = async (): Promise<CategoryWithChildrens[]> => {
   
-  const url = `${process.env.VERCEL_URL}/api/categories/all`;
+  const url = `https://${process.env.VERCEL_URL}/api/categories/all`;
   const response = await fetch(url, { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_CATEGORIES] } });
 
   const result = await response.json();

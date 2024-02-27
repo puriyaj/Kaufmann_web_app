@@ -1,3 +1,4 @@
+'use server'
 import { Prisma } from '../../../prisma/generated/client';
 import { PAGE_SIZE } from '@utils/constants';
 import { paginatedResponse } from '@utils/helper';

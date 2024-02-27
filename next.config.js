@@ -29,7 +29,7 @@ const config = {
       },
     ],
   },
-  domains: ['storage.iran.liara.space', 'localhost'],
+
   //   webpack: (config) => {
   //     config.module.rules.push({
   //       test: /\.svg$/i,

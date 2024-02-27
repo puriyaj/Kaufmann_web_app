@@ -3,7 +3,7 @@ import './globals.css';
 import { Providers } from './providers';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+export const dynamic = 'force-dynamic';
 const Urls: string[] = ['/image/1.webp'];
 export const metadata: Metadata = {
   title: 'فروشگاه آنلاین',

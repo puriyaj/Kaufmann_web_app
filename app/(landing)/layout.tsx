@@ -3,7 +3,6 @@ import './style.css';
 import Script from 'next/script';
 import Link from 'next/link';
 import  CategoryListItem  from './components/category-list-item';
-import Image from 'next/image';
 import { FooterComponent } from './components/footer';
 import { SearchBox } from './components/search-box';
 import { getServerSession } from "next-auth";

@@ -24,7 +24,7 @@ export const getCategories = async (page: number = 1, query?: string): Promise<P
   return result;
 };
 export const allCategories = async (): Promise<CategoryWithChildrens[]> => {
-  const url = `${API_URL}/categories/all`;
+  const url = `categories/all`;
   const response = await fetch(url, { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_CATEGORIES] } });
 
   const result = await response.json();

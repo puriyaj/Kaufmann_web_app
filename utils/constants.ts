@@ -3,7 +3,7 @@ import { ACTIVATION_STATUS, BANNER_POSITION, CURRENCY_TYPE } from '../prisma/gen
 export const CLIENT_IP = process.env.NODE_ENV == 'production' ? 'https://admin.bazargram.app' : 'http://localhost:3000';
 export const API_IP = process.env.NODE_ENV == 'production' ? 'https://api.bazargram.app' : 'http://localhost:3000/api';
 export const ADMIN_URL = `${CLIENT_IP}`;
-export const API_URL = process.env.NEXT_AUTH_URL;
+export const API_URL = process.env.NEXTAUTH_URL;
 // export const API_URL = `${API_IP}`;
 export const CDN_URI = `https://kaufmann-image.s3.eu-central-1.amazonaws.com`;
 export const UPLOAD_URL = '/api/upload';

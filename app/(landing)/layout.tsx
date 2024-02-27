@@ -2,7 +2,7 @@
 import './style.css';
 import Script from 'next/script';
 import Link from 'next/link';
-import { CategoryListItem } from './components/category-list-item';
+import  CategoryListItem  from './components/category-list-item';
 import Image from 'next/image';
 import { allCategories, getCategories } from 'actions/category.action';
 import { FooterComponent } from './components/footer';

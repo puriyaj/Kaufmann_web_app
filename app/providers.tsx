@@ -10,7 +10,7 @@ export function Providers({ children }: any) {
 
   return (
     <>
-      <SessionProvider>
+      <SessionProvider basePath="/api/auth">
         <ConfirmationProvider>
           <ActionContextProvider>{children}</ActionContextProvider>
         </ConfirmationProvider>

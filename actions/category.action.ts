@@ -24,7 +24,8 @@ export const getCategories = async (page: number = 1, query?: string): Promise<P
   return result;
 };
 export const allCategories = async (): Promise<CategoryWithChildrens[]> => {
-  const response = await fetch('api/categories/all', { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_CATEGORIES] } });
+  const url = `${process.env.NEXT_PUBLIC_VERCEL_URL}api/categories/all`;
+  const response = await fetch(url, { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_CATEGORIES] } });
 
   const result = await response.json();
   if (result.error) throw new GeneralError(result?.error?.message, { ishandledError: true, statusCode: result?.error?.statusCode });

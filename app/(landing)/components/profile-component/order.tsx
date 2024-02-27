@@ -36,7 +36,7 @@ const data = [
   }
   
 ]
-function Order() {
+const Order = () => {
   return (
     <>
     <table className='bg-gray-100 w-full rounded-xl p-3 h-full shadow-lg'>

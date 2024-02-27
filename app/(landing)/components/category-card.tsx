@@ -4,7 +4,7 @@ import { rand } from '@utils/utils';
 import Image from 'next/image';
 import React from 'react';
 
-export const CategoryCard: React.FC<{ category: Category }> = ({ category }) => {
+const CategoryCard: React.FC<{ category: Category }> = ({ category }) => {
   return (
     <a href="#" className="right rt-10px rt-bg rt-relative">
       <Image src={`${CDN_URI}/${category?.image}`} width={80} height={100} alt={category?.name} className="mx-auto w-auto h-auto" priority/>
@@ -13,3 +13,4 @@ export const CategoryCard: React.FC<{ category: Category }> = ({ category }) => 
     </a>
   );
 };
+export default CategoryCard;

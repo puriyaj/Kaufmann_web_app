@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-function List() {
+const List = () => {
   return (
     <>
     <div className='w-40 flex flex-col items-center bg-gray-100 rounded-xl p-3'>

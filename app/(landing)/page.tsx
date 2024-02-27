@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../../utils/auth';
 import { Banners } from './components/banners';
-import { CategorySection } from './components/category-section';
+import  CategorySection  from './components/category-section';
 import { OffersSection } from './components/offers-section';
 import { FeaturesSection } from './components/features-section';
 import { BlogSlider } from './components/blog-slider';

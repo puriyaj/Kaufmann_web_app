@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useSession } from 'next-auth/react';
 import { Session } from 'inspector';
 import { userAgent } from 'next/server';
-function Info() {
+const Info = () => { 
   const { data, status } = useSession();
   return (
     <>

@@ -14,7 +14,7 @@ import { Paginated } from 'types/page';
 import { ProductInfoWithComments, ProductWithCategoryAndStock } from 'types/types';
 
 export const getProducts = async (page: number, query?: string, subCategoryId?: string): Promise<Paginated<ProductWithCategoryAndStock>> => {
-  const url = makeUrl(`${API_URL}/products`, { page, query, subCategoryId });
+  const url = makeUrl(`api/products`, { page, query, subCategoryId });
 
   const response = await fetch(url, { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_PRODUCTS] } });
 

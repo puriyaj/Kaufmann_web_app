@@ -14,7 +14,7 @@ import { CreateTicket, DeleteTicket, UpdateTicketStatus } from 'requests/ticket.
 import { ACTIVATION_STATUS } from '../prisma/generated/client';
 
 export const getTickets = async (page: number, query?: string, userId?: string): Promise<Paginated<TicketWithUser>> => {
-  const url = makeUrl(`${API_URL}/tickets`, { page, query, userId });
+  const url = makeUrl(`api/tickets`, { page, query, userId });
 
   const response = await fetch(url, { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_TICKETS] } });
 

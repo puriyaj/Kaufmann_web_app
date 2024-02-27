@@ -11,7 +11,7 @@ import { CACHE_BANNERS } from '@utils/cache-tags';
 import { CreateBanner, DeleteBanner, UpdateBanner } from 'requests/banner.dto';
 
 export const getBanners = async (): Promise<Banner []> => {
-  const url = `${API_URL}/banners`;
+  const url = `$api/banners`;
   const response = await fetch(url, { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_BANNERS] } });
 
   const result = await response.json();

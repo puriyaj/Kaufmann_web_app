@@ -14,7 +14,7 @@ import { CreateComment, DeleteComment, UpdateComment, UpdateCommentStatus } from
 import { ACTIVATION_STATUS } from '../prisma/generated/client';
 
 export const getComments = async (page: number, query?: string, productId?: string): Promise<Paginated<CommentWithProduct>> => {
-  const url = makeUrl(`${API_URL}/comments`, { page, query, productId });
+  const url = makeUrl(`api/comments`, { page, query, productId });
 
   const response = await fetch(url, { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_COMMENTS] } });
 

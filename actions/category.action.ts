@@ -14,7 +14,7 @@ import { CategoryWithChildrens } from 'types/types';
 import { Category } from '../prisma/generated/client';
 
 export const getCategories = async (page: number = 1, query?: string): Promise<Paginated<CategoryWithChildrens>> => {
-  const url = makeUrl(`${API_URL}/categories`, { page, query });
+  const url = makeUrl(`api/categories`, { page, query });
 
   const response = await fetch(url, { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_CATEGORIES] } });
 

@@ -15,7 +15,7 @@ import { SubCategoryWithParent } from 'types/types';
 import { CreateSubCategory, DeleteSubCategory, UpdateSubCategory } from 'requests/sub-category.dto';
 
 export const getSubCategories = async (page: number, query?: string, categoryId?: string): Promise<Paginated<SubCategoryWithParent>> => {
-  const url = makeUrl(`${API_URL}/sub-categories`, { page, query, categoryId });
+  const url = makeUrl(`api/sub-categories`, { page, query, categoryId });
 
   const response = await fetch(url, { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_SUB_CATEGORIES] } });
 

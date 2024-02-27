@@ -12,16 +12,13 @@ import { authOptions } from "../../utils/auth";
 import { Toaster } from "@/components/ui/toaster"
 export const dynamic = 'force-dynamic';
 import { useRouter } from 'next/router';
-import { prisma } from '@utils/prisma';
+
 
 
 
 
 export default async function Layout({ children }: { children: React.ReactNode }) {
-  const categories =  await prisma.category.findMany({
-    orderBy: [{ createdAt: 'desc' }],
-    include: { subCategories: { select: { id: true, name: true } } },
-  });
+  const categories = await allCategories();
   const session = await getServerSession(authOptions);
   
   return (

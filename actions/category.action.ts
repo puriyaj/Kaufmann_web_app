@@ -14,7 +14,7 @@ import { CategoryWithChildrens } from 'types/types';
 import { Category } from '../prisma/generated/client';
 import useSWR from 'swr'
 export const getCategories = async (page: number = 1, query?: string): Promise<Paginated<CategoryWithChildrens>> => {
-  const url = makeUrl(`https://${process.env.VERCEL_URL}/api/categories`, { page, query });
+  const url = makeUrl(`${API_URL}/categories`, { page, query });
   const response = await fetch(url, { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_CATEGORIES] } });
 
   const result = await response.json();
@@ -24,7 +24,7 @@ export const getCategories = async (page: number = 1, query?: string): Promise<P
 };
 export const allCategories = async (): Promise<CategoryWithChildrens[]> => {
   
-  const url = `https://${process.env.VERCEL_URL}/api/categories/all`;
+  const url = `${API_URL}/categories/all`;
   const result = await prisma.category.findMany({
     orderBy: [{ createdAt: 'desc' }],
     include: { subCategories: { select: { id: true, name: true } } },

@@ -1,4 +1,3 @@
-
 import { ACTIVATION_STATUS, Product } from '../prisma/generated/client';
 import { CACHE_PRODUCTS } from '@utils/cache-tags';
 import { API_URL, UNAUTORIZED_MESSAGE } from '@utils/constants';
@@ -14,7 +13,7 @@ import { Paginated } from 'types/page';
 import { ProductInfoWithComments, ProductWithCategoryAndStock } from 'types/types';
 
 export const getProducts = async (page: number, query?: string, subCategoryId?: string): Promise<Paginated<ProductWithCategoryAndStock>> => {
-  const url = makeUrl(`https://${process.env.VERCEL_URL}/api/products`, { page, query, subCategoryId });
+  const url = makeUrl(`${API_URL}/products`, { page, query, subCategoryId });
 
   const response = await fetch(url, { headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, next: { tags: [CACHE_PRODUCTS] } });
 

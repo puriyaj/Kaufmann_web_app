@@ -140,7 +140,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
       
       <FooterComponent />
        
-    
+      
     </div>
     <div id="close-menu-bg" className="rt "></div>
       <div id="mob-menu" className="mob-menu rt-bg right ">

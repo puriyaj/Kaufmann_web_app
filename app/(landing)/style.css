@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+close-menu-bg
 *{margin:0;padding:0;font-weight:300;font-style:normal;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;-webkit-transition-duration:0.3s;transition-duration:0.3s}
 *,::before,::after{outline:none;box-sizing:border-box}
 ul,li{list-style:none}
@@ -394,7 +394,7 @@ header .list .offers .icon i{margin-top:-4px}
 .cart .btnz{box-shadow:0 5px 15px rgba(45,206,162,0.34);padding:7px 15px;background-color:#2dcea2}
 .cart .side-40 p{padding:7px 0 7px 10px}
 .cart .side-40 .ins{background-color:#ebe9eb;padding:12px 15px}
-.mob-menu{position:fixed;top:0;right:-260px;opacity:0;visibility:hidden;transform:scale(0.7);max-width:80%;z-index:9999999999999999999999999999999999;width:500px;height:100%;overflow:auto;overflow-x:hidden;box-shadow:-2px 0 4px 0 rgba(0,0,0,.13);max-width:80%}
+.mob-menu{position:fixed;top:0;right:-260px;opacity:0;visibility:hidden;transform:scale(0.7);max-width:80%;z-index:9999999999;width:500px;height:100%;overflow:auto;overflow-x:hidden;box-shadow:-2px 0 4px 0 rgba(0,0,0,.13);max-width:80%}
 .mob-menu.active{right:0;transform:scale(1);visibility:visible;opacity:1}
 .mob-menu .logo{margin:15px 10px;width:calc(100% - 30px);padding:10px 15px 20px 15px;border-bottom:1px #eee solid}
 .mob-menu ul .title{padding:15px 25px 12px 25px}

@@ -386,7 +386,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/ilaman/dev/Kaufmann_web_app/prisma/generated/client",
+      "value": "/Users/pouria/Desktop/Projects.nosync/bazargram-next-En-master/prisma/generated/client",
       "fromEnvVar": null
     },
     "config": {
@@ -395,7 +395,7 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-1.1.x",
+        "value": "darwin-arm64",
         "native": true
       }
     ],
@@ -405,7 +405,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../..",

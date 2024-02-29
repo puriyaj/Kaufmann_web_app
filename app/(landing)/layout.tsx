@@ -139,9 +139,11 @@ export default async function Layout({ children }: { children: React.ReactNode }
  
       
       <FooterComponent />
-
-      <div id="close-menu-bg" className="rt"></div>
-      <div id="mob-menu" className="mob-menu rt-bg right">
+       
+    
+    </div>
+    <div id="close-menu-bg" className="rt "></div>
+      <div id="mob-menu" className="mob-menu rt-bg right ">
         <div className="logo rt rt-align">
           <Link href="/" className="rt">
             <p className='right text-2xl font-bold text-red-500'>Kaufmann</p>
@@ -205,7 +207,6 @@ export default async function Layout({ children }: { children: React.ReactNode }
         </ul>
       </div>
       
-    </div>
     <Toaster/>
       
       <Script async src="/js/jquery.js" />

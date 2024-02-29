@@ -17,7 +17,7 @@ model Account {
   id                String  @id @default(cuid())
   userId            String
   type              String
-  provider          String
+  providerId          String
   providerAccountId String
   refresh_token     String?
   access_token      String?
@@ -29,7 +29,7 @@ model Account {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@unique([provider, providerAccountId])
+  @@unique([providerId, providerAccountId])
 }
 
 

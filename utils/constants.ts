@@ -6,7 +6,7 @@ export const ADMIN_URL = `${CLIENT_IP}`;
 export const API_URL = API_IP;
 // export const API_URL = `${API_IP}`;
 export const CDN_URI = `https://kaufmann-image.s3.eu-central-1.amazonaws.com`;
-export const UPLOAD_URL = '/api/upload';
+export const UPLOAD_URL = 'https://kaufmann-web-app.vercel.app/api/upload';
 
 export const MAX_FILE_SIZE = 2_000_000;
 export const PAGE_SIZE = 5;

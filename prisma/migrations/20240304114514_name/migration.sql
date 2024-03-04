@@ -2,6 +2,9 @@
 CREATE TYPE "USER_ROLE" AS ENUM ('SUPER', 'ADMIN', 'SELLER', 'USER');
 
 -- CreateEnum
+CREATE TYPE "TYPE" AS ENUM ('PREMIUM', 'DEFAULT');
+
+-- CreateEnum
 CREATE TYPE "BANNER_POSITION" AS ENUM ('SLIDER', 'TOP_RIGHT', 'TOP_LEFT', 'BOTTOM_RIGHT', 'BOTTOM_LEFT');
 
 -- CreateEnum
@@ -79,6 +82,21 @@ CREATE TABLE "User" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "UsrData" (
+    "id" TEXT NOT NULL,
+    "name" TEXT,
+    "email" TEXT,
+    "emailVerified" TIMESTAMP(3),
+    "password" TEXT,
+    "image" TEXT,
+    "bith" TEXT,
+    "AccountType" "TYPE" NOT NULL DEFAULT 'DEFAULT',
+    "userId" TEXT NOT NULL,
+
+    CONSTRAINT "UsrData_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -266,11 +284,17 @@ CREATE UNIQUE INDEX "VerificationToken_identifier_token_key" ON "VerificationTok
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
+-- CreateIndex
+CREATE UNIQUE INDEX "UsrData_email_key" ON "UsrData"("email");
+
 -- AddForeignKey
 ALTER TABLE "Account" ADD CONSTRAINT "Account_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Session" ADD CONSTRAINT "Session_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "UsrData" ADD CONSTRAINT "UsrData_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "SubCategory" ADD CONSTRAINT "SubCategory_categoryId_fkey" FOREIGN KEY ("categoryId") REFERENCES "Category"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

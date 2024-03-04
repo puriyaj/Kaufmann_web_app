@@ -6,8 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 export const dynamic = 'force-dynamic';
 const Urls: string[] = ['/image/1.webp'];
 export const metadata: Metadata = {
-  title: 'فروشگاه آنلاین',
-  description: 'فروشگاه آنلاین',
+  title: 'Online Shop ',
+  description: 'Buy cheap',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

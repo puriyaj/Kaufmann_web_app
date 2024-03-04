@@ -1,5 +1,5 @@
 'use server';
-import { Category } from '../prisma/generated/client';
+import { Category } from '@prisma/client';
 import { CACHE_CATEGORIES, CACHE_SUB_CATEGORIES } from '@utils/cache-tags';
 import { API_URL, UNAUTORIZED_MESSAGE } from '@utils/constants';
 import { GeneralError, ResponseEntity } from '@utils/genral-error';

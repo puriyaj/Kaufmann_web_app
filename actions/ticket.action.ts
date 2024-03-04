@@ -11,7 +11,7 @@ import { Paginated } from 'types/page';
 import { TicketWithUser } from 'types/types';
 import { CACHE_TICKETS } from '@utils/cache-tags';
 import { CreateTicket, DeleteTicket, UpdateTicketStatus } from 'requests/ticket.dto';
-import { ACTIVATION_STATUS } from '../prisma/generated/client';
+import { ACTIVATION_STATUS } from '@prisma/client';
 
 export const getTickets = async (page: number, query?: string, userId?: string): Promise<Paginated<TicketWithUser>> => {
   const url = makeUrl(`${API_URL}/tickets`, { page, query, userId });

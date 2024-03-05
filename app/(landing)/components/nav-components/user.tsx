@@ -57,7 +57,7 @@ const NavBar = () =>{
             onClick={toggleLoginMenu}
           >
             <div>
-              {session?.user.image ? <Image onClick={toggleLoginMenu} className='rounded-full ' src={session?.user.image as string} width={24} height={24} alt=''/> : session?.user.image ? <Image onClick={toggleLoginMenu} className='rounded-full ' src='/logo/logo.svg' width={24} height={24} alt=''/> :<FaUser onClick={toggleLoginMenu} size={24}/>}
+              {session?.user.image ? <Image onClick={toggleLoginMenu} className='rounded-full ' src={session?.user.image as string} width={24} height={24} alt=''/> : <FaUser className={`${status === 'authenticated' && 'text-blue-400'}`} onClick={toggleLoginMenu} size={24}/>}
               
             </div>
             

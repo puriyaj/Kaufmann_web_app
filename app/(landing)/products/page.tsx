@@ -15,7 +15,7 @@ export default async function Page({ params, searchParams }: IPageProps) {
     <div className="list-products rt">
       <div className="main">
         <div className="title rt rt-relative">
-          <h1 className="name rt-22 rt-444 rt-medium right rt-relative">لیست محصولات فروشگاه</h1>
+          <h1 className="name rt-22 rt-444 rt-medium right rt-relative">List of Products</h1>
         </div>
         {products?.data?.map((it) => <ProductCard key={it.id} product={it} />)}
 

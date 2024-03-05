@@ -61,7 +61,10 @@ const NavBar = () =>{
           </div>
 
           <div className="text-gray-800 cursor-pointer">
+            <Link href='/cart'>
             <FaShoppingCart size={24} />
+            </Link>
+            
           </div>
         </div>
         <div>
@@ -73,9 +76,10 @@ const NavBar = () =>{
           </button>
         <div className='text-gray-800 md:flex gap-10 pr-5 hidden items-end'>
         <Link href='/'>Home</Link>
-        <Link href='/'>Products</Link>
-        <Link href='/'>About</Link>
-        <Link href='/'>Contact</Link>
+        <Link href='/products'>Products</Link>
+        <Link href='/blog'>Blog</Link>
+        <Link href='/about'>About</Link>
+        <Link href='/contact'>Contact</Link>
           </div>
         </div>
     
@@ -92,7 +96,7 @@ const NavBar = () =>{
     <AnimatePresence >
           {(isMenuOpen || isLoginMenuOpen) && (
             <motion.div
-              className={`sticky top-[7.7rem] ${isMenuOpen ? 'right-1' : 'left-1'} ${status =='authenticated' ? '' : 'bg-[#e0e0e0]'}  w-fit p-4 rounded-md shadow-md`}
+              className={`sticky top-[7.7rem] ${isMenuOpen ? 'right-1' : 'left-1'}   w-fit p-4 rounded-md shadow-md`}
               variants={menuVariants}
               initial="hidden"
               animate="visible"
@@ -103,8 +107,9 @@ const NavBar = () =>{
               <ul className="flex flex-col justify-end items-start space-y-4">
                 {isMenuOpen && (
                   <>
-                  
-                    <li>
+                  <div className='flex flex-col w-[7rem] gap-1'>
+
+                  <li className='bg-white rounded-md p-1 shadow-lg text-black'>
                       <Link
                         href="/"
                         className="text-gray-800 hover:text-gray-300 transition duration-300"
@@ -112,7 +117,15 @@ const NavBar = () =>{
                         Home
                       </Link>
                     </li>
-                    <li>
+                    <li className='bg-white rounded-md p-1 shadow-lg text-black'>
+                      <Link
+                        href="/products"
+                        className="text-gray-800 hover:text-gray-300 transition duration-300"
+                      >
+                        Products
+                      </Link>
+                    </li>
+                    <li className='bg-white rounded-md p-1 shadow-lg text-black'>
                       <Link
                         href="/about"
                         className="text-gray-800 hover:text-gray-300 transition duration-300"
@@ -120,15 +133,15 @@ const NavBar = () =>{
                         About
                       </Link>
                     </li>
-                    <li>
+                    <li className='bg-white rounded-md p-1 shadow-lg text-black'>
                       <a
-                        href="/services"
+                        href="/blog"
                         className="text-gray-800 hover:text-gray-300 transition duration-300"
                       >
-                        Services
+                        Blog
                       </a>
                     </li>
-                    <li>
+                    <li className='bg-white rounded-md p-1 shadow-lg text-black'>
                       <Link
                         href="/contact"
                         className="text-gray-800 hover:text-gray-300 transition duration-300"
@@ -136,6 +149,8 @@ const NavBar = () =>{
                         Contact
                       </Link>
                     </li>
+                  </div>
+                   
                     
                     
                   </>
@@ -152,23 +167,26 @@ const NavBar = () =>{
                     </ul> :  <>
                   <ul>
                   <button className='flex flex-col justify-start' onClick={toggleLoginMenu}>
-
-                    <li>
+                    <div className='flex flex-col w-[7rem] gap-1'>
+                    <li className='bg-white rounded-md p-1 shadow-lg text-black'>
                       <Link
                         href="/login"
-                        className="text-white hover:text-gray-300 transition duration-300"
+                        className=" hover:text-gray-300 transition duration-300"
                       >
                         Login
                       </Link>
                     </li>
-                    <li>
+                    <li className='bg-white rounded-md p-1 shadow-lg text-black'>
                       <Link
                         href="/register"
-                        className="text-white hover:text-gray-300 transition duration-300"
+                        className=" hover:text-gray-300 transition duration-300"
                       >
                         Sign Up
                       </Link>
                     </li>
+                    </div>
+                    
+
                   </button>
                     </ul>
                   </>}

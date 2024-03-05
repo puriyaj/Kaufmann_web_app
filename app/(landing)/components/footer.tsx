@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 export const FooterComponent = () => {
@@ -69,24 +70,24 @@ export const FooterComponent = () => {
           </div>
           <ul className="menu rt rt-14">
             <li className="rt">
-              <a href="#" className="rt rt-555">
+              <Link href="/products" className="rt rt-555">
                 <i className="fa fa-circle">Shop</i>
-              </a>
+              </Link>
             </li>
             <li className="rt">
-              <a href="#" className="rt rt-555">
+              <Link href="/blog" className="rt rt-555">
                 <i className="fa fa-circle">Blog</i> 
-              </a>
+              </Link>
             </li>
             <li className="rt">
-              <a href="#" className="rt rt-555">
+              <Link href="/about" className="rt rt-555">
                 <i className="fa fa-circle">About Us</i>
-              </a>
+              </Link>
             </li>
             <li className="rt">
-              <a href="#" className="rt rt-555">
+              <Link href="/contact" className="rt rt-555">
                 <i className="fa fa-circle">Contact</i>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

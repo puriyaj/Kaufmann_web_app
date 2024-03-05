@@ -3,6 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
+import Menu from 'app/(landing)/components/profile-component/menu';
 
 
 
@@ -16,7 +17,18 @@ const Info = () => {
   }
   return (
     <>
-     <div className='grid md:grid-cols-2  gap-20 p-5   rounded-2xl shadow-xl h-full grid-cols-1'>
+    
+    <div className='flex flex-row w-full '>
+         
+
+
+         <div className='md:flex flex-col p-2  justify-center items-center gap-3  w-max h-full hidden'>
+        <Menu />
+</div>
+
+       <div className='w-full'>
+         <div className='p-2 h-full'>
+         <div className='grid md:grid-cols-2  gap-20 p-5   rounded-2xl shadow-xl h-full grid-cols-1'>
 <div className='border-b-4 flex justify-between gap-20 border-[#e0e0e0]'>
   <div>
     <p>Name & Last Name</p>
@@ -33,7 +45,7 @@ const Info = () => {
       
       <div>
      <p>Phone Number</p>
-     <p>+491764537829</p> 
+     <p>+491762848246</p> 
       </div>
       <Image src="/image/icon/edit.svg" width={30} height={30} alt="logo" />
     </div>
@@ -41,7 +53,7 @@ const Info = () => {
     <div className='border-b-4 flex justify-between gap-20 border-[#e0e0e0]'>
       <div>
         <p>Date of Birth</p>
-     <p>05.07.2000</p> 
+     <p>07,07,2000</p> 
       </div>
       <Image src="/image/icon/edit.svg" width={30} height={30} alt="logo" />
     </div>
@@ -71,6 +83,12 @@ const Info = () => {
     </div>
           </div>
 
+</div>
+</div>      
+</div>   
+
+
+    
     </>
   )
 }

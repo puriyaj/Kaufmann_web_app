@@ -15,12 +15,10 @@ export const SearchBox = () => {
     });
   }, [query]);
   return (
-    <div className="search-box right rt-relative">
-      <input onChange={(e) => setQuery(e.target.value ?? '')} className="rt rt-30px rt-400 rt-13" type="text" placeholder="         Find Your Product Hier" />
-      <i className="fa fa-search rt-absolute left"></i>
-      <span className="close" id="close-search">
-        Close
-      </span>
+    <div className="search-box right rt-relative w-[20rem]">
+      <input onChange={(e) => setQuery(e.target.value ?? '')} className="rt rt-30px bg-[#e0e0e0] rt-13 p-3 " type="text" placeholder="     Find Your Product Hier" />
+      <i className="fa fa-search rt-absolute left pt-3 pl-2"></i>
+     
       <span className="close" id="close-search-bg"></span>
       {query.trim().length > 1 && (
         <ul className="search_result rt rt-14 rt-absolute rt-bg rt-10px">
@@ -37,5 +35,6 @@ export const SearchBox = () => {
         </ul>
       )}
     </div>
+ 
   );
 };

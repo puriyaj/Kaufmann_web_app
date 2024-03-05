@@ -56,15 +56,15 @@ export default function Login() {
         <h2 className="text-gray-900 text-lg font-medium text-center">Login</h2>
         <div className="flex flex-col gap-3">
           <InputBox control={control} name="email" rules={{ required: { value: true, message: 'Required' } }} type="email" placeholder="Email" />
-          <InputBox control={control} name="password" rules={{ required: { value: true, message: 'Required' } }} type="password" placeholder="Password" />
+          <InputBox control={control} name="password" rules={{ required: { value: true, message: 'Required' } }} type="password" placeholder=" Password" />
           <Button type="submit" loading={isPending}>
             Login
           </Button>
           <p>
-            Dont have an account?<Link href="/register">Sign Up</Link>
+            Dont have an account?<Link className='text-blue-500' href="/register"> Sign Up</Link>
           </p>
 
-          <Button type="submit" onClick={() => signIn('google',{ callbackUrl: 'http://localhost:3000/profile'})}>google</Button>
+          <Button className='bg-red-500 hover:bg-red-600'  onClick={() => signIn('google',{ callbackUrl: 'http://localhost:3000/profile'})}>Google</Button>
         </div>
       </form>
     </div>

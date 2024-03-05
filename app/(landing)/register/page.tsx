@@ -64,18 +64,18 @@ export default function RegisterPage() {
 
         <div className="flex flex-col gap-3">
           <label className={`${formik.touched.name && formik.errors.name ? "text-red-400" : ""}`}>{formik.errors.name ? formik.errors.name : "Name"}</label>
-          <input className="border border-black " type="name" {...register("name")} placeholder=" Name" value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} />
+          <input className="border border-black rounded-xl" type="name" {...register("name")} placeholder=" Name" value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} />
 
-          <label className={`${formik.touched.email && formik.errors.email ? "text-red-400" : ""}`}>{formik.errors.email ? formik.errors.email : "Email"}</label>
-          <input className="border border-black" type="email" {...register("email")} placeholder=" Email" value={formik.values.email} onChange={formik.handleChange} />
+          <label className={`${formik.touched.email && formik.errors.email ? "text-red-400" : ""} `}>{formik.errors.email ? formik.errors.email : "Email"}</label>
+          <input className="border border-black rounded-xl" type="email" {...register("email")} placeholder=" Email" value={formik.values.email} onChange={formik.handleChange} />
           <label className={`${formik.touched.password && formik.errors.password ? "text-red-400" : ""}`}>{formik.errors.password ? formik.errors.password : "Password"}</label>
-          <input className="border border-black" type="password" {...register("password")} placeholder=" Password" value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} />
+          <input className="border border-black rounded-xl" type="password" {...register("password")} placeholder=" Password" value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} />
 
           <Button loading={isPending} type="submit">
             Sign Up
           </Button>
           <p>
-            Already have an account?<Link href="/login">Login</Link>
+            Already have an account?<Link className="text-blue-500" href="/login"> Login</Link>
           </p>
         </div>
       </form>

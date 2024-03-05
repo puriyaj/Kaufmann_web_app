@@ -6,11 +6,14 @@ import { SearchBox } from '../../components/search-box';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSession } from "next-auth/react"
-
+import { usePathname } from 'next/navigation'
 import Menu from '../profile-component/menu';
 
 const NavBar = () =>{
   const { data: session, status } = useSession()
+  const pathname = usePathname()
+  const isActive = pathname === "/profile" || pathname ==="/profile/info" || pathname ==="/profile/list" || pathname ==="/profile/order" || pathname ==="/profile/payment"
+  const activityText = isActive ? "active" : "not active"
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isLoginMenuOpen, setLoginMenuOpen] = useState(false);
   const toggleMenu = () => {
@@ -159,7 +162,7 @@ const NavBar = () =>{
                 
                 {isLoginMenuOpen && (<>
                 {status == 'authenticated' ?  <ul>
-                  <button className='flex flex-col justify-start md:hidden' onClick={toggleLoginMenu}>
+                  <button className={`flex flex-col justify-start ${activityText === 'active' && 'md:hidden'}  `} onClick={toggleLoginMenu}>
                      
                    <Menu />
                     

@@ -34,9 +34,9 @@ const NavBar = () =>{
     
     <>
      <nav className="bg-white shadow-lg p-4">
-      <div className="container mx-auto flex items-center justify-between relative">
+      <div className="container mx-auto flex  justify-between items-center relative gap-5">
        
-          <div className="text-red-500 text-2xl font-bold pt-3">Kaufmann</div>
+          <div className="text-red-500 text-2xl font-bold pt-3 ">Kaufmann</div>
           <div className=''>
             <SearchBox />
           </div>
@@ -57,7 +57,7 @@ const NavBar = () =>{
             onClick={toggleLoginMenu}
           >
             <div>
-              {session?.user.name ? <Image onClick={toggleLoginMenu} className='rounded-full ' src={session?.user.image as string} width={24} height={24} alt=''/> : <FaUser onClick={toggleLoginMenu} size={24}/>}
+              {session?.user.image ? <Image onClick={toggleLoginMenu} className='rounded-full ' src={session?.user.image as string} width={24} height={24} alt=''/> : session?.user.image ? <Image onClick={toggleLoginMenu} className='rounded-full ' src='/logo/logo.svg' width={24} height={24} alt=''/> :<FaUser onClick={toggleLoginMenu} size={24}/>}
               
             </div>
             

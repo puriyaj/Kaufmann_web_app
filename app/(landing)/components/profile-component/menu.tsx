@@ -60,7 +60,7 @@ function Menu() {
       {menu.map((item,index )=>(
          <div key={index} className='flex gap-2'>
         
-        <button onClick={() => (handleClick(item.num),index == 4 && signOut({ callbackUrl: 'http://localhost:3000/' }))} className={`bg-gray-150 rounded-lg p-2 w-full hover:bg-gray-200 ${click == index && 'bg-[#e0e0e0] text-gray-800'}`}>
+        <button onClick={() => (handleClick(item.num),index == 4 && signOut({ callbackUrl: 'https://kaufmann-web-app.vercel.app' }))} className={`bg-gray-150 rounded-lg p-2 w-full hover:bg-gray-200 ${click == index && 'bg-[#e0e0e0] text-gray-800'}`}>
           <Link href={item.page} className='flex p-1 '>
             <Image src={item.img} width={20} height={20} alt = 'logo' className='pr-1  '/>
           <p className='w-[7rem]'>{item.name}</p>

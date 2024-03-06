@@ -7,6 +7,7 @@ import { FeaturesSection } from './components/features-section';
 import { BlogSlider } from './components/blog-slider';
 import { getLandingBanners } from 'actions/banner.action';
 import { getLandingCategories } from 'actions/category.action';
+import { getProducts } from 'actions/product.action';
 //import { getCategories } from "actions/category.action";
 export const dynamic = 'force-dynamic';
 
@@ -14,6 +15,7 @@ export default async function Page() {
   // const session = await getServerSession(authOptions);
   const banners = await getLandingBanners();
   const categories = await getLandingCategories();
+ 
   return (
     <>
       <Banners banners={banners} />

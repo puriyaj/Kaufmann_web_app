@@ -25,14 +25,14 @@ export default async function page({ params }: IPageProps<{ productId: string }>
             <i className="fa fa-home"></i>
           </a>
           <div className="inside left rt-14 rt-555">
-            <Link href="/">صفحه نخست</Link> / <Link href={`/products?cat=${product?.subCategory?.id}`}>{product?.subCategory?.name}</Link> / {product?.name}
+            <Link href="/">Home</Link> / <Link href={`/products?cat=${product?.subCategory?.id}`}>{product?.subCategory?.name}</Link> / {product?.name}
           </div>
         </div>
         <section className="top-product rt-bg rt-overflow rt">
           <div className="right-side right">
             <ProductImages images={product.images} />
             <span className="notic rt rt-5px rt-15 rt-bold">
-              <i className="fa fa-hourglass-start"></i> حداکثر تا 6روز تحویل داده میشود
+              <i className="fa fa-hourglass-start">Deliver in 3 days</i>  
             </span>
           </div>
           <div className="left-side left rt-relative">
@@ -62,49 +62,49 @@ export default async function page({ params }: IPageProps<{ productId: string }>
               </div>
             </div>
             <div className="side right">
-              <h4 className="rt rt-15 rt-400 rt-relative">برخی از ویژگی های این محصول</h4>
+              <h4 className="rt rt-15 rt-400 rt-relative">About Product</h4>
               <ul className="rt rt-999 rt-13">
                 <li className="rt">
-                  <i className="fa fa-circle"></i> ابعاد <span className="rt-400">40*26*49</span>
+                  <i className="fa fa-circle">size</i>  <span className="rt-400">40*26*49</span>
                 </li>
                 <li className="rt">
-                  <i className="fa fa-circle"></i> نوع چوب <span className="rt-400">ملچ</span>
+                  <i className="fa fa-circle">Material</i>   <span className="rt-400">Titanium</span>
                 </li>
                 <li className="rt">
-                  <i className="fa fa-circle"></i> نوع پوشش <span className="rt-400">بورما واکس</span>
+                  <i className="fa fa-circle">Glass</i>   <span className="rt-400">Protected</span>
                 </li>
                 <li className="rt">
-                  <i className="fa fa-circle"></i> وزن <span className="rt-400">14 گرم</span>
+                  <i className="fa fa-circle">weight</i>  <span className="rt-400">230 gr</span>
                 </li>
               </ul>
               <span className="suspend rt rt-13">
-                <i className="fa fa-car"></i> این کالا دارای ضمانت بازگشت وجه به مدت دو هفته است
+                <i className="fa fa-car">This Product has 2 Years Garantie</i>
               </span>
               <div className="cat-p rt-14 right rt-5px">
-                <i className="fa fa-list-ul"></i> دسته بندی : <Link href={`/products?cat=${product?.subCategory?.id}`}>{product?.subCategory?.name}</Link>
+                <i className="fa fa-list-ul">Categoty :</i>    <Link href={`/products?cat=${product?.subCategory?.id}`}>{product?.subCategory?.name}</Link>
               </div>
             </div>
             <ProductStock product={product} />
             <div className="features text-center rt-align rt">
               <div className="item right rt-bg">
                 <Image alt="" className="mx-auto" width={50} height={50} src="/image/icon-1.png" />
-                <h4 className="rt rt-400 rt-666 rt-14">تضمین برگشت پول</h4>
+                <h4 className="rt rt-400 rt-666 rt-14">Money Back Garantie</h4>
               </div>
               <div className="item right rt-bg">
                 <Image alt="" className="mx-auto" width={50} height={50} src="/image/icon-2.png" />
-                <h4 className="rt rt-400 rt-666 rt-14">دارای هدیه</h4>
+                <h4 className="rt rt-400 rt-666 rt-14">Cheap</h4>
               </div>
               <div className="item right rt-bg">
                 <Image alt="" className="mx-auto" width={50} height={50} src="/image/icon-3.png" />
-                <h4 className="rt rt-400 rt-666 rt-14">ارسال رایگان کالا</h4>
+                <h4 className="rt rt-400 rt-666 rt-14">Free Delivery  </h4>
               </div>
               <div className="item right rt-bg">
                 <Image alt="" className="mx-auto" width={50} height={50} src="/image/icon-4.png" />
-                <h4 className="rt rt-400 rt-666 rt-14">تضمین اصل بودن</h4>
+                <h4 className="rt rt-400 rt-666 rt-14">  Technical Check</h4>
               </div>
               <div className="item right rt-bg">
                 <Image alt="" className="mx-auto" width={50} height={50} src="/image/icon-5.png" />
-                <h4 className="rt rt-400 rt-666 rt-14">پرداخت امن</h4>
+                <h4 className="rt rt-400 rt-666 rt-14">Safe Pay</h4>
               </div>
             </div>
           </div>

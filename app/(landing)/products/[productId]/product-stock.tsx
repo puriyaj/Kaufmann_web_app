@@ -22,19 +22,19 @@ export const ProductStock: React.FC<{ product: ProductInfoWithComments }> = ({ p
   return (
     <div className="side left rt-5px">
       <div className="icon rt-center rt-400 rt-666 rt-20 rt-bg right rt-50px">{stock?.inStock ?? '-'}</div>
-      <span className="anbar right rt-14 rt-555">عدد موجود در انبار</span>
+      <span className="anbar right rt-14 rt-555">Out of Stock</span>
       <p className="price rt rt-15 rt-relative rt-5px rt-bg rt-align">
         {stock && stock?.discount > 0 && (
           <bdi className="rt-666 rt rt-400 lpr">
-            قیمت قبلی : <del className="rt rt-16 rt-medium rt-444">{Number(stock?.price ?? 0).toLocaleString()} تومان</del>
+             Last Price : <del className="rt rt-16 rt-medium rt-444">{Number(stock?.price ?? 0).toLocaleString()} Euro</del>
           </bdi>
         )}
         <bdi className="rt-666 rt rt-400">
-          قیمت فعلی : <ins className="rt rt-16 rt-medium rt-rang">{getPrice(stock)} تومان</ins>
+           Price : <ins className="rt rt-16 rt-medium rt-rang">{getPrice(stock)} Euro</ins>
         </bdi>
       </p>
       <button onClick={addToCart} className="addtocart rt-align rt rt-color rt-fff rt-5px rt-400 rt-15">
-        <i className="fa fa-shopping-basket"></i> افزودن به سبد خرید
+        <i className="fa fa-shopping-basket">Add to the Basket</i> 
       </button>
     </div>
   );

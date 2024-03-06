@@ -8,6 +8,7 @@ import { BlogSlider } from './components/blog-slider';
 import { getLandingBanners } from 'actions/banner.action';
 import { getLandingCategories } from 'actions/category.action';
 import { getProducts } from 'actions/product.action';
+//import { RecentlySection } from './components/recently-section';
 //import { getCategories } from "actions/category.action";
 export const dynamic = 'force-dynamic';
 
@@ -22,6 +23,7 @@ export default async function Page() {
       <CategorySection categories={categories} />
       <OffersSection />
       <FeaturesSection />
+ 
       {/* <RecentlySection /> */}
       {/* <ProductsSlider /> */}
       <BlogSlider />

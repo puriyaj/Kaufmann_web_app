@@ -50,7 +50,7 @@ function Menu() {
     <>
         ‍
       <div className='bg-Neutral-200  rounded-2xl shadow-lg p-5'>
-      <div className='flex flex-col justify-center items-center pt-5 gap-10'>
+      <div className='flex flex-col justify-center items-center pt-5 gap-10 '>
           <Image  src={`${data?.user.image ? data?.user.image:'/image/avatar.jpg' }`} className={`rounded-full `}  width={80} height={80} alt="logo" />
     <p className={`pb-2 `} >{data?.user.name}</p>
 

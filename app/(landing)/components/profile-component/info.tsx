@@ -16,7 +16,7 @@ const Info = () => {
   }
   return (
     <>
-     <div className='grid md:grid-cols-2  gap-20 p-5   rounded-2xl shadow-xl h-full grid-cols-1'>
+     <div className='grid md:grid-cols-2  gap-20 p-5   rounded-2xl shadow-xl h-full grid-cols-1 '>
 <div className='border-b-4 flex justify-between gap-20 border-[#e0e0e0]'>
   <div>
     <p>Name & Last Name</p>

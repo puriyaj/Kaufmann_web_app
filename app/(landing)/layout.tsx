@@ -1,17 +1,10 @@
 'use client'
 import './style.css';
 import Script from 'next/script';
-
-import  CategoryListItem  from './components/category-list-item';
-
 import { allCategories, getCategories } from 'actions/category.action';
 import { FooterComponent } from './components/footer';
-
-
 import { Toaster } from "@/components/ui/toaster"
-import NavBar from './components/nav-components/user';
 export const dynamic = 'force-dynamic';
-
 import { motion, AnimatePresence } from 'framer-motion';
 import {  FaShoppingCart,FaUser} from 'react-icons/fa';
 import { useState,useEffect } from 'react';
@@ -27,6 +20,8 @@ import Menu from './components/profile-component/menu';
 
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+
+
   const { data: session, status } = useSession()
   const pathname = usePathname()
   const isActive = pathname === "/profile" || pathname ==="/profile/info" || pathname ==="/profile/list" || pathname ==="/profile/order" || pathname ==="/profile/payment"
@@ -45,6 +40,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     hidden: { opacity: 0, x: '-100%' },
     visible: { opacity: 1, x: 0 },
   };
+
+  
   return (
     <>
   

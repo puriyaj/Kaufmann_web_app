@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![alt text](https://github.com/puriyaj/cv/blob/2999b1dda8978065a925885d4fb15fafca6e9853/public/images/kauf.png)
+
+
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped 
+
+[visit the Demo Hier](https://kaufmann-web-app.vercel.app).
 
 ## Getting Started
 
